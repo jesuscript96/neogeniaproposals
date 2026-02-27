@@ -104,6 +104,7 @@
                     <a href="landing-2.html" class="text-neoblue font-bold border-b-2 border-neoblue pb-1">2.
                         Empatía</a>
                     <a href="landing-3.html" class="hover:text-neoblue transition-colors">3. Innovación</a>
+                    <a href="landing-4.html" class="hover:text-neoblue transition-colors">4. Directo</a>
                 </nav>
             </div>
         </div>
@@ -121,12 +122,12 @@
                         class="inline-block py-1 px-3 rounded-full bg-neoblue/10 text-neoblue text-xs font-bold tracking-wider uppercase mb-4">Opción
                         2: Arquitectura de Empatía</span>
                     <h1 class="font-serif text-4xl md:text-5xl lg:text-6xl font-bold text-neodark leading-tight mb-6">
-                        Mereces recuperar tu bienestar y disfrutar de la comida sin miedos.
+                        Vuelve a comer sin miedo: recupera tu vida equilibrando tu microbiota.
                     </h1>
                     <p class="text-lg md:text-xl text-gray-700 mb-8 max-w-xl">
-                        Comprendemos la frustración de no encontrar respuestas claras a tus molestias digestivas. Te
-                        ayudamos a descubrir de manera clínica la raíz del problema y acompañarte de cerca hasta
-                        recuperar tu ritmo vital.
+                        Comprendemos la frustración de vivir con molestias sin respuestas. Te ayudamos a descubrir la
+                        raíz clínica de tu malestar estudiando tu microbiota y te acompañamos hasta que vuelvas a
+                        disfrutar de la comida y de tu vida.
                     </p>
                     <div class="flex flex-col sm:flex-row gap-4 text-sm font-medium text-neodark mb-8">
                         <div class="flex items-center gap-2 bg-white/80 px-4 py-2 rounded-full shadow-sm">
@@ -168,14 +169,19 @@
                                     placeholder="Tu número de teléfono" required>
                             </div>
                             <div>
+                                <input type="email"
+                                    class="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-neoblue outline-none bg-gray-50"
+                                    placeholder="Tu email" required>
+                            </div>
+                            <div>
                                 <select
                                     class="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-neoblue outline-none bg-gray-50 text-gray-600"
                                     required>
-                                    <option value="" disabled selected>Identifica tu principal molestia</option>
-                                    <option>Hinchazón diaria y gases</option>
-                                    <option>Miedo e inseguridad al comer fuera</option>
-                                    <option>Baja energía a raíz de las digestiones</option>
-                                    <option>Incomodidad y molestias generales</option>
+                                    <option value="" disabled selected>¿Qué es lo que más te limita?</option>
+                                    <option>Miedo a que la comida me siente mal</option>
+                                    <option>Hinchazón abdominal constante</option>
+                                    <option>Baja energía y cansancio digestivo</option>
+                                    <option>Inseguridad en eventos sociales</option>
                                 </select>
                             </div>
                             <button type="submit" class="w-full btn-primary mt-4 text-lg">
@@ -255,16 +261,15 @@
             class="w-full lg:w-1/2 order-2 lg:order-1 py-16 lg:py-24 px-8 lg:px-16 lg:pl-24 flex flex-col justify-center">
             <h2 class="text-3xl font-serif font-bold text-neodark mb-6">Entendemos el origen de tu malestar.</h2>
             <div class="space-y-5 text-gray-700 leading-relaxed text-sm lg:text-base">
-                <p>Las molestias no forman parte de ti. Visualiza tu ecosistema digestivo como un jardín interno. A raíz
-                    de periodos de estrés, tratamientos farmacológicos previos o intolerancias no detectadas, el
-                    equilibrio de ese jardín puede verse alterado.</p>
-                <p><strong>El enfoque convencional:</strong> Frecuentemente se recomiendan dietas restrictivas
-                    indefinidas que, si bien alivian el síntoma temporalmente, pueden generar un miedo profundo a
-                    reintroducir grupos de alimentos.</p>
-                <p class="bg-neolight px-6 py-4 rounded-xl border-l-4 border-neoblue"><strong>Nuestro compromiso
-                        contigo:</strong> Identificamos los desequilibrios reales, tratamos el origen de forma escalona
-                    y médica, y te ayudamos a repoblar tu microbiota para devolverte la flexibilidad digestiva que
-                    perdiste. Todo ello cuidando de tu bienestar mental durante el proceso.</p>
+                <p>Las molestias no son algo con lo que debas resignarte. Visualiza tu ecosistema digestivo como un
+                    <strong>jardín interno</strong>. A veces, por estrés o mala alimentación, las "malas hierbas"
+                    (bacterias oportunistas) crecen más de la cuenta, rompiendo el equilibrio de tu microbiota.
+                </p>
+                <p><strong>El error común:</strong> Dietas restrictivas eternas que, aunque alivian el síntoma, "matan
+                    de hambre" a las bacterias buenas y generan miedo a comer, cronificando el problema.</p>
+                <p class="bg-neolight px-6 py-4 rounded-xl border-l-4 border-neoblue"><strong>Nuestra solución:</strong>
+                    Identificamos exactamente qué falta o sobra en tu jardín, tratamos la raíz de forma médica y te
+                    ayudamos a repoblar tu microbiota para que recuperes la libertad que mereces.</p>
             </div>
         </div>
         <!-- Image Half (Straight, 100% height) -->
@@ -282,10 +287,9 @@
             <div class="bg-white p-10 rounded-3xl shadow-sm text-left mb-8 relative border border-gray-100">
                 <div class="absolute -top-5 left-10 text-6xl text-neoblue font-serif opacity-20">"</div>
                 <p class="text-gray-700 italic text-lg leading-relaxed relative z-10">
-                    "Llegué con cierto recelo tras muchas dietas fallidas. En Neogenia no solo equilibraron mis
-                    digestiones mediante el tratamiento clínico, sino que me sentí verdaderamene escuchada. El apoyo
-                    psicológico integrado fue clave. Hoy siento que he recuperado el control sobre lo que como sin
-                    fobia."
+                    "Llegué con mucho miedo tras años de dietas fallidas. En Neogenia entendieron que el problema no era
+                    la comida, sino mi microbiota. Tras el estudio y el plan personalizado, no solo desapareció la
+                    hinchazón, sino que volví a sentarme a la mesa con alegría y sin ansiedad."
                 </p>
                 <div class="mt-6 flex items-center gap-4">
                     <div
@@ -362,6 +366,11 @@
                         <input type="tel"
                             class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-neoblue outline-none bg-gray-50"
                             placeholder="Teléfono de contacto" required>
+                    </div>
+                    <div>
+                        <input type="email"
+                            class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-neoblue outline-none bg-gray-50"
+                            placeholder="Tu email" required>
                     </div>
                     <div class="pt-4 text-center">
                         <button type="submit" class="w-full btn-primary text-lg">
