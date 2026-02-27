@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clínica Neogenia - Autoridad Médica en Microbiota</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap"
+        rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        neoblue: '#156b9c',
+                        neogreen: '#2ecc71',
+                        neolight: '#f2f6f8',
+                        neodark: '#2c3e50'
+                    },
+                    fontFamily: {
+                        sans: ['Montserrat', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            color: #4a5568;
+        }
+
+        h1,
+        h2,
+        h3,
+        .font-serif {
+            font-family: 'Playfair Display', serif;
+        }
+
+        .btn-primary {
+            background-color: #156b9c;
+            color: white;
+            border-radius: 9999px;
+            padding: 0.75rem 2rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 14px 0 rgba(21, 107, 156, 0.39);
+            display: inline-block;
+            text-align: center;
+            cursor: pointer;
+            border: none;
+        }
+
+        .btn-primary:hover {
+            background-color: #10527a;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(21, 107, 156, 0.23);
+        }
+
+        .hero-bg {
+            background-image: url('https://images.unsplash.com/photo-1579684385127-1ef15d508118?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .hero-overlay {
+            background: linear-gradient(to right, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0.85) 50%, rgba(255, 255, 255, 0.2) 100%);
+        }
+
+        @media (max-width: 768px) {
+            .hero-overlay {
+                background: linear-gradient(to bottom, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0.95) 100%);
+            }
+        }
+    </style>
+</head>
+
+<body class="antialiased bg-white">
+
+    <!-- Header -->
+    <header class="fixed top-0 left-0 right-0 bg-white/95 backdrop-blur-sm shadow-sm z-50">
+        <div class="container mx-auto px-4 h-20 flex items-center justify-between">
+            <div class="flex items-center gap-2">
+                <div class="flex items-center">
+                    <img src="assets/images/logoneogenia.png" alt="Logo Neogenia" class="h-10 w-auto">
+                    <div class="ml-3 flex flex-col">
+                        <span class="font-bold text-xl text-neoblue leading-none tracking-tight">neogenia</span>
+                        <span class="text-[0.6rem] text-gray-500 tracking-widest uppercase font-semibold">By CMED</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="hidden md:flex items-center gap-8">
+                <nav class="flex gap-6 text-sm font-medium text-gray-600">
+                    <a href="index.html" class="text-neoblue font-bold border-b-2 border-neoblue pb-1">1.
+                        Autoridad</a>
+                    <a href="landing-2.html" class="hover:text-neoblue transition-colors">2. Empatía</a>
+                    <a href="landing-3.html" class="hover:text-neoblue transition-colors">3. Innovación</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- 1. Hero Section de Prestigio -->
+    <section class="relative pt-32 pb-16 md:pt-40 md:pb-24 flex items-center min-h-[90vh] hero-bg">
+        <div class="absolute inset-0 hero-overlay z-0"></div>
+
+        <div class="container mx-auto px-4 relative z-10">
+            <div class="flex flex-col md:flex-row items-center gap-12">
+                <!-- Text Content -->
+                <div class="w-full md:w-1/2 lg:w-3/5">
+                    <span
+                        class="inline-block py-1 px-3 rounded-full bg-neoblue/10 text-neoblue text-xs font-bold tracking-wider uppercase mb-4">Opción
+                        1: Arquitectura de Autoridad</span>
+                    <h1 class="font-serif text-4xl md:text-5xl lg:text-6xl font-bold text-neodark leading-tight mb-6">
+                        Rigor médico y empatía para tu salud digestiva.
+                    </h1>
+                    <p class="text-lg md:text-xl text-gray-700 mb-8 max-w-xl">
+                        Respaldados por los 50 años de trayectoria clínica del Centro Médico de Enfermedades Digestivas
+                        (CMED). Diagnóstico preciso y tratamiento validado científicamente para cuidar de tu microbiota.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4 text-sm font-medium text-neodark mb-8">
+                        <div class="flex items-center gap-2 bg-white/80 px-4 py-2 rounded-full shadow-sm">
+                            <svg class="w-5 h-5 text-neogreen" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                                <polyline points="22 4 12 14.01 9 11.01" />
+                            </svg>
+                            <span>Comité Médico Especializado</span>
+                        </div>
+                        <div class="flex items-center gap-2 bg-white/80 px-4 py-2 rounded-full shadow-sm">
+                            <svg class="w-5 h-5 text-neogreen" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                                <polyline points="22 4 12 14.01 9 11.01" />
+                            </svg>
+                            <span>Garantía CMED España</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Form -->
+                <div class="w-full md:w-1/2 lg:w-2/5" id="lead-form-hero">
+                    <div class="bg-white rounded-2xl shadow-2xl p-8 border border-gray-100 relative overflow-hidden">
+                        <div class="absolute top-0 left-0 w-full h-2 bg-neoblue"></div>
+                        <h3 class="text-2xl font-serif font-bold text-neodark mb-2">Solicitar Evaluación Clínica</h3>
+                        <p class="text-gray-500 text-sm mb-6">Un especialista de nuestro cuadro médico revisará tu caso
+                            preliminar.</p>
+
+                        <form class="space-y-4" onsubmit="event.preventDefault(); alert('Formulario enviado.');">
+                            <div>
+                                <input type="text"
+                                    class="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-neoblue outline-none bg-gray-50"
+                                    placeholder="Nombre completo" required>
+                            </div>
+                            <div>
+                                <input type="tel"
+                                    class="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-neoblue outline-none bg-gray-50"
+                                    placeholder="Teléfono" required>
+                            </div>
+                            <div>
+                                <input type="email"
+                                    class="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-neoblue outline-none bg-gray-50"
+                                    placeholder="tu@email.com" required>
+                            </div>
+                            <button type="submit" class="w-full btn-primary mt-4 text-lg">
+                                SOLICITAR CITA
+                            </button>
+                            <p class="text-xs text-center text-gray-400 mt-4 flex items-center justify-center gap-1">
+                                <svg class="w-3 h-3" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                                    stroke="currentColor" stroke-width="2">
+                                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                                    <polyline points="22 4 12 14.01 9 11.01" />
+                                </svg>
+                                Datos protegidos e historial confidencial.
+                            </p>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 2. Social Proof de Logotipos -->
+    <section class="py-10 border-b border-gray-100 bg-white">
+        <div class="container mx-auto px-4 text-center">
+            <p class="text-sm font-semibold text-gray-400 tracking-widest uppercase mb-6">Instituciones y experiencia
+                que nos avalan</p>
+            <div
+                class="flex flex-wrap justify-center items-center gap-8 md:gap-16 opacity-60 grayscale hover:grayscale-0 transition-all duration-300">
+                <h3 class="text-xl font-bold font-serif text-neoblue">CMED</h3>
+                <h3 class="text-xl font-bold text-gray-700">Profesionales en Patología Digestiva</h3>
+                <h3 class="text-xl font-bold text-gray-700">+50 Años de Experiencia Clínica</h3>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. Presentación del Cuadro Médico -->
+    <section class="py-20 bg-neolight">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-serif font-bold text-neoblue mb-4">La tranquilidad de estar en
+                    manos expertas</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Entendemos la importancia de poner tu salud en manos de
+                    especialistas clínicos, microbiólogos y expertos en nutrición.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                <!-- Médico 1 -->
+                <div class="bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-100 text-center pb-6">
+                    <img src="assets/images/ana_sierra_web.png"
+                        alt="Ana Sierra" class="w-full h-80 object-cover object-top mb-4">
+                    <h3 class="text-xl font-bold text-neodark">Ana Sierra</h3>
+                    <p class="text-sm font-semibold text-neoblue mb-3">Dietista - Nutricionista</p>
+                    <p class="text-gray-500 text-sm px-6">Directora del área de diagnóstico avanzado y evaluación precisa de la microbiota en Neogenia.</p>
+                </div>
+                <!-- Médico 2 -->
+                <div class="bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-100 text-center pb-6">
+                    <img src="assets/images/dra_mar_sanchez.jpg"
+                        alt="Dra. Mar Sánchez" class="w-full h-80 object-cover object-top mb-4">
+                    <h3 class="text-xl font-bold text-neodark">Dra. Mar Sánchez</h3>
+                    <p class="text-sm font-semibold text-neoblue mb-3">Aparato Digestivo</p>
+                    <p class="text-gray-500 text-sm px-6">Amplia experiencia en el abordaje integral de patologías digestivas complejas y equilibrio intestinal.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. Testimonios de Colegas/Profesionales -->
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-4 max-w-4xl text-center">
+            <h2 class="text-3xl font-serif font-bold text-neodark mb-12">Valorados por la comunidad médica</h2>
+
+            <div class="bg-neolight p-8 rounded-2xl border-l-4 border-neoblue text-left mb-6 shadow-sm">
+                <p class="text-gray-700 italic mb-4 text-lg">"La labor de Neogenia apoyada por CMED resulta fundamental
+                    a día de hoy. Nos permite ofrecer a los pacientes un abordaje basado en herramientas diagnósticas
+                    avanzadas y tratamientos precisos y medibles."</p>
+                <div class="font-bold text-neodark">Dr. Fernando Gómez</div>
+                <div class="text-sm text-gray-500">Médico Internista</div>
+            </div>
+
+            <div class="bg-neolight p-8 rounded-2xl border-l-4 border-neoblue text-left shadow-sm">
+                <p class="text-gray-700 italic mb-4 text-lg">"El enfoque multidisciplinar que desarrolla el equipo de
+                    Neogenia aporta una gran tranquilidad. Sabemos que los pacientes derivados reciben una atención
+                    minuciosa que combina diagnóstico, nutrición y bienestar integral."</p>
+                <div class="font-bold text-neodark">Dra. Laura Jiménez</div>
+                <div class="text-sm text-gray-500">Especialista en Endocrinología</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. FAQ de Rigor Científico (Split Layout Full Height) -->
+    <section class="flex flex-col lg:flex-row items-stretch bg-neolight p-0 m-0 overflow-hidden">
+        <!-- Image Half (Straight, 100% height) -->
+        <div class="w-full lg:w-1/2 p-0 m-0">
+            <img src="assets/images/eequipo.jpg"
+                alt="El equipo de Neogenia" class="w-full h-full object-cover min-h-[400px]">
+        </div>
+        <!-- Content Half -->
+        <div class="w-full lg:w-1/2 py-20 px-8 lg:px-16 flex flex-col justify-center">
+            <div class="mb-10">
+                <h2 class="text-3xl font-serif font-bold text-neoblue mb-4">Transparencia y Rigor Técnico</h2>
+                <p class="text-gray-600 border-l-4 border-neogreen pl-4">Resolvemos tus dudas desde una perspectiva
+                    clínica y empática, pensando siempre en tu tranquilidad.</p>
+            </div>
+
+            <div class="space-y-6">
+                <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
+                    <h4 class="font-bold text-neodark mb-2 text-lg">¿En qué se fundamenta su metodología?</h4>
+                    <p class="text-gray-600 text-sm leading-relaxed">Nos basamos en estudiar cada caso de manera
+                        individual y detallada. Priorizamos el uso de analíticas avanzadas, como los estudios de ADN
+                        bacteriano (PCR) en heces, que nos permiten enfocar el tratamiento con mayor certeza y evitar
+                        soluciones genéricas.</p>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
+                    <h4 class="font-bold text-neodark mb-2 text-lg">¿Por qué un enfoque multidisciplinar?</h4>
+                    <p class="text-gray-600 text-sm leading-relaxed">Entendemos que el bienestar digestivo abarca
+                        múltiples áreas. Por eso, combinamos el diagnóstico médico con pautas nutricionales
+                        personalizadas y un soporte emocional, ayudando a normalizar la relación con la alimentación y
+                        el propio cuerpo.</p>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
+                    <h4 class="font-bold text-neodark mb-2 text-lg">¿Cuentan con soporte farmacológico?</h4>
+                    <p class="text-gray-600 text-sm leading-relaxed">Siempre buscamos el tratamiento más amable y menos
+                        invasivo posible para el paciente. Sin embargo, al contar con el amparo clínico de CMED,
+                        disponemos de la capacidad de prescribir terapias mayores si tu caso clínico específico lo
+                        requiere para avanzar.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. Cierre de Conversión Directo -->
+    <section class="py-20 bg-white relative overflow-hidden" id="lead-form-bottom">
+        <div class="absolute top-0 right-0 w-64 h-64 bg-neoblue/10 rounded-full blur-3xl -mr-20 -mt-20"></div>
+        <div class="absolute bottom-0 left-0 w-80 h-80 bg-neogreen/10 rounded-full blur-3xl -ml-20 -mb-20"></div>
+
+        <div class="container mx-auto px-4 relative z-10">
+            <div class="max-w-4xl mx-auto bg-neolight rounded-3xl shadow-lg p-8 md:p-12 border border-gray-200">
+                <div class="text-center mb-8">
+                    <h2 class="text-3xl font-serif font-bold text-neodark mb-4">Agenda tu consulta de valoración clínica
+                    </h2>
+                    <p class="text-gray-600">Nuestro departamento de admisiones revisará tus datos y coordinará una
+                        primera evaluación para determinar la mejor forma de ayudarte en Neogenia.</p>
+                </div>
+
+                <form class="space-y-6" onsubmit="event.preventDefault(); alert('Formulario enviado con éxito.');">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-sm font-bold text-neoblue mb-1">Nombre y Apellidos</label>
+                            <input type="text"
+                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-neoblue outline-none bg-white"
+                                required>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-bold text-neoblue mb-1">Teléfono de contacto</label>
+                            <input type="tel"
+                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-neoblue outline-none bg-white"
+                                required>
+                        </div>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-bold text-neoblue mb-1">Correo Electrónico</label>
+                        <input type="email"
+                            class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-neoblue outline-none bg-white"
+                            required>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-bold text-neoblue mb-1">Motivo principal de su consulta
+                            médica</label>
+                        <select
+                            class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-neoblue outline-none bg-white">
+                            <option>Diagnóstico y sospecha de SIBO</option>
+                            <option>Problemas de tránsito en general</option>
+                            <option>Hinchazón y dolor recurrente</option>
+                            <option>Otros motivos de bienestar digestivo</option>
+                        </select>
+                    </div>
+                    <div class="pt-4 text-center">
+                        <button type="submit" class="btn-primary text-lg px-12 uppercase tracking-wide">
+                            Solicitar Admisión
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-400 py-12">
+        <div class="container mx-auto px-4 text-center text-sm">
+            <p class="mb-4">Especialistas en Microbiota y Bienestar Digestivo. Avalados por 50 años de experiencia
+                técnica CMED.</p>
+            <div class="flex justify-center gap-4 text-gray-500 mb-6">
+                <a href="#" class="hover:text-white">Aviso Legal</a>
+                <a href="#" class="hover:text-white">Política de Privacidad</a>
+            </div>
+            <p>&copy; 2025 Clínica Neogenia by CMED. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+</body>
+
+</html>

@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clínica Neogenia - Recupera tu vida y bienestar</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap"
+        rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        neoblue: '#156b9c',
+                        neogreen: '#2ecc71',
+                        neolight: '#f2f6f8',
+                        neodark: '#2c3e50'
+                    },
+                    fontFamily: {
+                        sans: ['Montserrat', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            color: #4a5568;
+        }
+
+        h1,
+        h2,
+        h3,
+        .font-serif {
+            font-family: 'Playfair Display', serif;
+        }
+
+        .btn-primary {
+            background-color: #156b9c;
+            color: white;
+            border-radius: 9999px;
+            padding: 0.75rem 2rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 14px 0 rgba(21, 107, 156, 0.39);
+            display: inline-block;
+            text-align: center;
+            cursor: pointer;
+            border: none;
+        }
+
+        .btn-primary:hover {
+            background-color: #10527a;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(21, 107, 156, 0.23);
+        }
+
+        .hero-bg {
+            background-image: url('https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .hero-overlay {
+            background: linear-gradient(to right, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0.85) 50%, rgba(255, 255, 255, 0.2) 100%);
+        }
+
+        @media (max-width: 768px) {
+            .hero-overlay {
+                background: linear-gradient(to bottom, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0.95) 100%);
+            }
+        }
+    </style>
+</head>
+
+<body class="antialiased bg-white">
+
+    <!-- Header -->
+    <header class="fixed top-0 left-0 right-0 bg-white/95 backdrop-blur-sm shadow-sm z-50">
+        <div class="container mx-auto px-4 h-20 flex items-center justify-between">
+            <div class="flex items-center gap-2">
+                <div class="flex items-center">
+                    <img src="assets/images/logoneogenia.png" alt="Logo Neogenia" class="h-10 w-auto">
+                    <div class="ml-3 flex flex-col">
+                        <span class="font-bold text-xl text-neoblue leading-none tracking-tight">neogenia</span>
+                        <span class="text-[0.6rem] text-gray-500 tracking-widest uppercase font-semibold">By CMED</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="hidden md:flex items-center gap-8">
+                <nav class="flex gap-6 text-sm font-medium text-gray-600">
+                    <a href="index.html" class="hover:text-neoblue transition-colors">1. Autoridad</a>
+                    <a href="landing-2.html" class="text-neoblue font-bold border-b-2 border-neoblue pb-1">2.
+                        Empatía</a>
+                    <a href="landing-3.html" class="hover:text-neoblue transition-colors">3. Innovación</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- 1. Hero Section Emocional -->
+    <section class="relative pt-32 pb-16 md:pt-40 md:pb-24 flex items-center min-h-[90vh] hero-bg">
+        <div class="absolute inset-0 hero-overlay z-0"></div>
+
+        <div class="container mx-auto px-4 relative z-10">
+            <div class="flex flex-col md:flex-row items-center gap-12">
+                <!-- Text Content -->
+                <div class="w-full md:w-1/2 lg:w-3/5">
+                    <span
+                        class="inline-block py-1 px-3 rounded-full bg-neoblue/10 text-neoblue text-xs font-bold tracking-wider uppercase mb-4">Opción
+                        2: Arquitectura de Empatía</span>
+                    <h1 class="font-serif text-4xl md:text-5xl lg:text-6xl font-bold text-neodark leading-tight mb-6">
+                        Mereces recuperar tu bienestar y disfrutar de la comida sin miedos.
+                    </h1>
+                    <p class="text-lg md:text-xl text-gray-700 mb-8 max-w-xl">
+                        Comprendemos la frustración de no encontrar respuestas claras a tus molestias digestivas. Te
+                        ayudamos a descubrir de manera clínica la raíz del problema y acompañarte de cerca hasta
+                        recuperar tu ritmo vital.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4 text-sm font-medium text-neodark mb-8">
+                        <div class="flex items-center gap-2 bg-white/80 px-4 py-2 rounded-full shadow-sm">
+                            <svg class="w-5 h-5 text-neogreen" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                                <polyline points="22 4 12 14.01 9 11.01" />
+                            </svg>
+                            <span>Acompañamiento Psicológico</span>
+                        </div>
+                        <div class="flex items-center gap-2 bg-white/80 px-4 py-2 rounded-full shadow-sm">
+                            <svg class="w-5 h-5 text-neogreen" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                                <polyline points="22 4 12 14.01 9 11.01" />
+                            </svg>
+                            <span>Tratamiento Empático</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Form -->
+                <div class="w-full md:w-1/2 lg:w-2/5" id="lead-form-hero">
+                    <div class="bg-white rounded-2xl shadow-2xl p-8 border border-gray-100 relative overflow-hidden">
+                        <div class="absolute top-0 left-0 w-full h-2 bg-neoblue"></div>
+                        <h3 class="text-2xl font-serif font-bold text-neodark mb-2">Cuéntanos tu caso</h3>
+                        <p class="text-gray-500 text-sm mb-6">Queremos escucharte y decirte honestamente cómo podemos
+                            ayudarte desde el punto de vista clínico.</p>
+
+                        <form class="space-y-4" onsubmit="event.preventDefault(); alert('Formulario enviado.');">
+                            <div>
+                                <input type="text"
+                                    class="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-neoblue outline-none bg-gray-50"
+                                    placeholder="¿Cómo te llamas?" required>
+                            </div>
+                            <div>
+                                <input type="tel"
+                                    class="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-neoblue outline-none bg-gray-50"
+                                    placeholder="Tu número de teléfono" required>
+                            </div>
+                            <div>
+                                <select
+                                    class="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-neoblue outline-none bg-gray-50 text-gray-600"
+                                    required>
+                                    <option value="" disabled selected>Identifica tu principal molestia</option>
+                                    <option>Hinchazón diaria y gases</option>
+                                    <option>Miedo e inseguridad al comer fuera</option>
+                                    <option>Baja energía a raíz de las digestiones</option>
+                                    <option>Incomodidad y molestias generales</option>
+                                </select>
+                            </div>
+                            <button type="submit" class="w-full btn-primary mt-4 text-lg">
+                                QUIERO RECUPERAR MI BIENESTAR
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 2. Agitación y Validación de Síntomas (Rediseñado) -->
+    <section class="py-20 bg-neolight border-b border-gray-100">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-serif font-bold text-neodark mb-4">Tus molestias son reales y las
+                    comprendemos.</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Sabemos por lo que pasan nuestros pacientes a diario y cómo
+                    la salud digestiva impacta directamente en la calidad de tu vida y felicidad.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                <div
+                    class="bg-white p-8 rounded-2xl border border-gray-200 shadow-sm hover:shadow-md transition-shadow">
+                    <div
+                        class="bg-neoblue/10 w-14 h-14 rounded-full flex items-center justify-center text-neoblue mb-6">
+                        <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z">
+                            </path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-neodark mb-3">Limitaciones en tu día a día</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed">A veces resulta difícil planificar encuentros,
+                        salir a cenar o asistir a eventos sociales por la preocupación natural sobre cómo reaccionará tu
+                        sistema digestivo o qué opciones tendrás disponibles para comer tranquilo.</p>
+                </div>
+                <div
+                    class="bg-white p-8 rounded-2xl border border-gray-200 shadow-sm hover:shadow-md transition-shadow">
+                    <div
+                        class="bg-neoblue/10 w-14 h-14 rounded-full flex items-center justify-center text-neoblue mb-6">
+                        <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z">
+                            </path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-neodark mb-3">Respuestas poco claras</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed">Puede ser doblemente frustrante acudir a consulta,
+                        realizarte analíticas y protocolos generales y escuchar que "todo está normal", mientras sigues
+                        experimentando incomodidad a diario sin un diagnóstico concreto.</p>
+                </div>
+                <!-- card 3 -->
+                <div
+                    class="bg-white p-8 rounded-2xl border border-gray-200 shadow-sm hover:shadow-md transition-shadow">
+                    <div
+                        class="bg-neoblue/10 w-14 h-14 rounded-full flex items-center justify-center text-neoblue mb-6">
+                        <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-neodark mb-3">Descanso y energía afectados</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed">La inflamación persistente puede influir
+                        enormemente en tu sensación de vitalidad. Muchas personas reportan fatiga, dolor leve y una
+                        sensación de pesadez constante que dificulta rendir en la rutina personal y profesional.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. Sección Educativa Narrativa (Split Layout Full Height) -->
+    <section class="flex flex-col lg:flex-row items-stretch bg-white p-0 m-0 overflow-hidden">
+        <!-- Content Half -->
+        <div
+            class="w-full lg:w-1/2 order-2 lg:order-1 py-16 lg:py-24 px-8 lg:px-16 lg:pl-24 flex flex-col justify-center">
+            <h2 class="text-3xl font-serif font-bold text-neodark mb-6">Entendemos el origen de tu malestar.</h2>
+            <div class="space-y-5 text-gray-700 leading-relaxed text-sm lg:text-base">
+                <p>Las molestias no forman parte de ti. Visualiza tu ecosistema digestivo como un jardín interno. A raíz
+                    de periodos de estrés, tratamientos farmacológicos previos o intolerancias no detectadas, el
+                    equilibrio de ese jardín puede verse alterado.</p>
+                <p><strong>El enfoque convencional:</strong> Frecuentemente se recomiendan dietas restrictivas
+                    indefinidas que, si bien alivian el síntoma temporalmente, pueden generar un miedo profundo a
+                    reintroducir grupos de alimentos.</p>
+                <p class="bg-neolight px-6 py-4 rounded-xl border-l-4 border-neoblue"><strong>Nuestro compromiso
+                        contigo:</strong> Identificamos los desequilibrios reales, tratamos el origen de forma escalona
+                    y médica, y te ayudamos a repoblar tu microbiota para devolverte la flexibilidad digestiva que
+                    perdiste. Todo ello cuidando de tu bienestar mental durante el proceso.</p>
+            </div>
+        </div>
+        <!-- Image Half (Straight, 100% height) -->
+        <div class="w-full lg:w-1/2 order-1 lg:order-2 p-0 m-0">
+            <img src="assets/images/sala.jpg" alt="Instalaciones de primer nivel"
+                class="w-full h-full object-cover min-h-[400px]">
+        </div>
+    </section>
+
+    <!-- 4. Casos de Éxito Detallados -->
+    <section class="py-20 bg-neolight border-t border-gray-100">
+        <div class="container mx-auto px-4 max-w-4xl text-center">
+            <h2 class="text-3xl font-serif font-bold text-neodark mb-12">Historias de evolución y bienestar.</h2>
+
+            <div class="bg-white p-10 rounded-3xl shadow-sm text-left mb-8 relative border border-gray-100">
+                <div class="absolute -top-5 left-10 text-6xl text-neoblue font-serif opacity-20">"</div>
+                <p class="text-gray-700 italic text-lg leading-relaxed relative z-10">
+                    "Llegué con cierto recelo tras muchas dietas fallidas. En Neogenia no solo equilibraron mis
+                    digestiones mediante el tratamiento clínico, sino que me sentí verdaderamene escuchada. El apoyo
+                    psicológico integrado fue clave. Hoy siento que he recuperado el control sobre lo que como sin
+                    fobia."
+                </p>
+                <div class="mt-6 flex items-center gap-4">
+                    <div
+                        class="w-12 h-12 bg-neoblue text-white rounded-full flex items-center justify-center font-bold text-xl">
+                        S</div>
+                    <div>
+                        <div class="font-bold text-neodark text-lg">Sara Hernández</div>
+                        <div class="text-sm text-gray-500">Recuperó su bienestar general recientemente</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. Hoja de Ruta del Bienestar (Rediseñado) -->
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-serif font-bold text-neodark mb-4">Tu camino hacia la recuperación
+                </h2>
+                <p class="text-gray-600">Un proceso estructurado, seguro y con acompañamiento constante.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-6 max-w-6xl mx-auto">
+                <div class="p-8 bg-neolight rounded-2xl border border-gray-100 shadow-sm relative overflow-hidden">
+                    <div class="absolute top-0 left-0 w-full h-1 bg-neoblue/40"></div>
+                    <div class="text-neoblue font-bold text-xl mb-3">1. Evaluación Cuidadosa</div>
+                    <p class="text-sm text-gray-600">Comenzamos escuchando tu caso con detenimiento y coordinando las
+                        pruebas de diagnóstico más amables y precisas posibles.</p>
+                </div>
+                <div class="p-8 bg-neolight rounded-2xl border border-gray-100 shadow-sm relative overflow-hidden">
+                    <div class="absolute top-0 left-0 w-full h-1 bg-neoblue/60"></div>
+                    <div class="text-neoblue font-bold text-xl mb-3">2. Claridad Diagnóstica</div>
+                    <p class="text-sm text-gray-600">Una vez obtengamos los resultados, te explicaremos de forma
+                        comprensible y tranquilizadora qué está ocurriendo internamente.</p>
+                </div>
+                <!-- 6. Garantía de Acompañamiento integrado aquí -->
+                <div class="p-8 bg-neoblue relative overflow-hidden rounded-2xl shadow-md text-white">
+                    <div class="text-white font-bold text-xl mb-3 flex items-center gap-2">3. Cuidado Integral 💛</div>
+                    <p class="text-sm text-blue-100 font-medium">Nutrición, especialidad digestiva y psicología trabajan
+                        en sincronía absoluta para ofrecerte un soporte médico redondo y verdaderamente empático.</p>
+                </div>
+                <div class="p-8 bg-neolight rounded-2xl border border-gray-100 shadow-sm relative overflow-hidden">
+                    <div class="absolute top-0 left-0 w-full h-1 bg-neogreen"></div>
+                    <div class="text-neogreen font-bold text-xl mb-3">4. Flexibilidad Lograda</div>
+                    <p class="text-sm text-gray-600">El objetivo superior es normalizar la flora intestinal para
+                        brindarte un bienestar sostenido, disminuyendo tu nivel de alerta ante comidas nuevas.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 7. Cierre de Conversión Empático -->
+    <section class="py-20 bg-neolight relative overflow-hidden" id="lead-form-bottom">
+        <div class="absolute top-0 right-0 w-64 h-64 bg-neoblue/10 rounded-full blur-3xl -mr-20 -mt-20"></div>
+        <div class="absolute bottom-0 left-0 w-80 h-80 bg-neogreen/10 rounded-full blur-3xl -ml-20 -mb-20"></div>
+
+        <div class="container mx-auto px-4 relative z-10">
+            <div
+                class="max-w-3xl mx-auto bg-white rounded-3xl shadow-xl p-8 md:p-12 border border-gray-100 text-center">
+                <h2 class="text-3xl font-serif font-bold text-neodark mb-4">Es el momento de dar un primer paso hacia el
+                    bienestar</h2>
+                <p class="text-gray-600 mb-8">Comprendemos que pedir ayuda médica cuesta cuando sientes que has probado
+                    de todo. Rellena el listado y contactaremos contigo de forma cercana y sin compromiso alguno.</p>
+
+                <form class="space-y-4 max-w-lg mx-auto text-left"
+                    onsubmit="event.preventDefault(); alert('Formulario enviado.');">
+                    <div>
+                        <input type="text"
+                            class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-neoblue outline-none bg-gray-50"
+                            placeholder="Tu nombre y apellidos" required>
+                    </div>
+                    <div>
+                        <input type="tel"
+                            class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-neoblue outline-none bg-gray-50"
+                            placeholder="Teléfono de contacto" required>
+                    </div>
+                    <div class="pt-4 text-center">
+                        <button type="submit" class="w-full btn-primary text-lg">
+                            SOLICITAR INFORMACIÓN
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-400 py-12">
+        <div class="container mx-auto px-4 text-center text-sm">
+            <p class="mb-4">Especialistas en Microbiota y Bienestar Digestivo. Avalados por 50 años de experiencia
+                técnica CMED.</p>
+            <div class="flex justify-center gap-4 text-gray-500 mb-6">
+                <a href="#" class="hover:text-white">Aviso Legal</a>
+                <a href="#" class="hover:text-white">Política de Privacidad</a>
+            </div>
+            <p>&copy; 2025 Clínica Neogenia by CMED. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+</body>
+
+</html>

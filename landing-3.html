@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clínica Neogenia - Medicina de Precisión en Microbiota</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap"
+        rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        neoblue: '#156b9c',
+                        neogreen: '#2ecc71',
+                        neolight: '#f2f6f8',
+                        neodark: '#2c3e50'
+                    },
+                    fontFamily: {
+                        sans: ['Montserrat', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            color: #4a5568;
+        }
+
+        h1,
+        h2,
+        h3,
+        .font-serif {
+            font-family: 'Playfair Display', serif;
+        }
+
+        .btn-primary {
+            background-color: #156b9c;
+            color: white;
+            border-radius: 9999px;
+            padding: 0.75rem 2rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 14px 0 rgba(21, 107, 156, 0.39);
+            display: inline-block;
+            text-align: center;
+            cursor: pointer;
+            border: none;
+        }
+
+        .btn-primary:hover {
+            background-color: #10527a;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(21, 107, 156, 0.23);
+        }
+
+        .hero-bg {
+            background-image: url('https://images.unsplash.com/photo-1576086213369-97a306d36557?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .hero-overlay {
+            background: linear-gradient(to right, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0.85) 50%, rgba(255, 255, 255, 0.2) 100%);
+        }
+
+        @media (max-width: 768px) {
+            .hero-overlay {
+                background: linear-gradient(to bottom, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0.95) 100%);
+            }
+        }
+    </style>
+</head>
+
+<body class="antialiased bg-white">
+
+    <!-- Header -->
+    <header class="fixed top-0 left-0 right-0 bg-white/95 backdrop-blur-sm shadow-sm z-50">
+        <div class="container mx-auto px-4 h-20 flex items-center justify-between">
+            <div class="flex items-center gap-2">
+                <div class="flex items-center">
+                    <img src="assets/images/logoneogenia.png" alt="Logo Neogenia" class="h-10 w-auto">
+                    <div class="ml-3 flex flex-col">
+                        <span class="font-bold text-xl text-neoblue leading-none tracking-tight">neogenia</span>
+                        <span class="text-[0.6rem] text-gray-500 tracking-widest uppercase font-semibold">By CMED</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="hidden md:flex items-center gap-8">
+                <nav class="flex gap-6 text-sm font-medium text-gray-600">
+                    <a href="index.html" class="hover:text-neoblue transition-colors">1. Autoridad</a>
+                    <a href="landing-2.html" class="hover:text-neoblue transition-colors">2. Empatía</a>
+                    <a href="landing-3.html" class="text-neoblue font-bold border-b-2 border-neoblue pb-1">3.
+                        Innovación</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- 1. Hero Section de Precisión -->
+    <section class="relative pt-32 pb-16 md:pt-40 md:pb-24 flex items-center min-h-[90vh] hero-bg">
+        <div class="absolute inset-0 hero-overlay z-0"></div>
+
+        <div class="container mx-auto px-4 relative z-10">
+            <div class="flex flex-col md:flex-row items-center gap-12">
+                <!-- Text Content -->
+                <div class="w-full md:w-1/2 lg:w-3/5">
+                    <span
+                        class="inline-block py-1 px-3 rounded-full bg-neoblue/10 text-neoblue text-xs font-bold tracking-wider uppercase mb-4">Opción
+                        3: Arquitectura de Innovación</span>
+                    <h1 class="font-serif text-4xl md:text-5xl lg:text-6xl font-bold text-neodark leading-tight mb-6">
+                        Descubre la tranquilidad de un diagnóstico preciso y personalizado.
+                    </h1>
+                    <p class="text-lg md:text-xl text-gray-700 mb-8 max-w-xl">
+                        Avanzamos hacia tratamientos basados en tu microbiota única, dejando atrás las soluciones
+                        generales. Con técnicas de diagnóstico en profundidad como la secuenciación de ADN (PCR),
+                        detectamos con claridad el origen de tus síntomas.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4 text-sm font-medium text-neodark mb-8">
+                        <div class="flex items-center gap-2 bg-white/80 px-4 py-2 rounded-full shadow-sm">
+                            <span class="w-2 h-2 rounded-full bg-neogreen"></span>
+                            <span>Diagnóstico Genómico (PCR)</span>
+                        </div>
+                        <div class="flex items-center gap-2 bg-white/80 px-4 py-2 rounded-full shadow-sm">
+                            <span class="w-2 h-2 rounded-full bg-neogreen"></span>
+                            <span>Medicina Altamente Individualizada</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Form -->
+                <div class="w-full md:w-1/2 lg:w-2/5" id="lead-form-hero">
+                    <div class="bg-white rounded-2xl shadow-2xl p-8 border border-gray-100 relative overflow-hidden">
+                        <div class="absolute top-0 left-0 w-full h-2 bg-neoblue"></div>
+                        <h3 class="text-2xl font-serif font-bold text-neodark mb-2">Evaluación Clínica Inicial</h3>
+                        <p class="text-gray-500 text-sm mb-6">Completa tus datos para agendar una primera toma de
+                            contacto y valorar las pruebas necesarias para tu caso.</p>
+
+                        <form class="space-y-4" onsubmit="event.preventDefault(); alert('Formulario enviado.');">
+                            <div>
+                                <input type="text"
+                                    class="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-neoblue outline-none bg-gray-50"
+                                    placeholder="Nombre completo" required>
+                            </div>
+                            <div>
+                                <input type="tel"
+                                    class="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-neoblue outline-none bg-gray-50"
+                                    placeholder="Teléfono móvil" required>
+                            </div>
+                            <div>
+                                <input type="email"
+                                    class="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-neoblue outline-none bg-gray-50"
+                                    placeholder="tu@email.com" required>
+                            </div>
+                            <button type="submit" class="w-full btn-primary mt-4 text-lg">
+                                SOLICITAR VALORACIÓN
+                            </button>
+                            <p class="text-xs text-center text-gray-400 mt-4 flex items-center justify-center gap-1">
+                                <svg class="w-3 h-3" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                                    stroke="currentColor" stroke-width="2">
+                                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                                    <polyline points="22 4 12 14.01 9 11.01" />
+                                </svg>
+                                Proceso médico confidencial
+                            </p>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 2. Nuestra Forma de Trabajar -->
+    <section class="py-20 bg-neolight border-b border-gray-100">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-3xl font-serif font-bold text-neoblue mb-12">Cómo aplicamos la medicina de precisión en
+                consulta</h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+                <div
+                    class="bg-white p-8 rounded-2xl border border-gray-100 shadow-sm relative pt-12 text-left hover:shadow-md transition-shadow">
+                    <div
+                        class="absolute -top-6 left-8 bg-neoblue text-white w-12 h-12 rounded-xl flex items-center justify-center text-2xl font-bold shadow-lg">
+                        1</div>
+                    <h3 class="text-xl font-bold text-neodark mb-3">Mapeo del Microbioma</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed">Olvidamos las conjeturas. Empleamos tecnología PCR
+                        en muestras para conocer con detalle y base científica qué familias de bacterias se encuentran
+                        desequilibradas.</p>
+                </div>
+                <!-- ... other items -->
+                <div
+                    class="bg-white p-8 rounded-2xl border border-gray-100 shadow-sm relative pt-12 text-left hover:shadow-md transition-shadow">
+                    <div
+                        class="absolute -top-6 left-8 bg-neoblue text-white w-12 h-12 rounded-xl flex items-center justify-center text-2xl font-bold shadow-lg">
+                        2</div>
+                    <h3 class="text-xl font-bold text-neodark mb-3">Formulación Dirigida</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed">Frente a probióticos genéricos de farmacia,
+                        recetamos cepas específicas y exactas adaptadas a las carencias particulares detectadas en tus
+                        resultados.</p>
+                </div>
+                <div
+                    class="bg-white p-8 rounded-2xl border border-gray-100 shadow-sm relative pt-12 text-left hover:shadow-md transition-shadow">
+                    <div
+                        class="absolute -top-6 left-8 bg-neoblue text-white w-12 h-12 rounded-xl flex items-center justify-center text-2xl font-bold shadow-lg">
+                        3</div>
+                    <h3 class="text-xl font-bold text-neodark mb-3">Monitorización Clínica</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed">Los resultados medibles requieren un seguimiento
+                        riguroso. Ajustamos las pautas nutricionales y farmacológicas semanalmente según la evolución
+                        objetiva de tu confort digestivo.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. Matriz de Beneficios Temporales -->
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-serif font-bold text-center text-neodark mb-16">Evolución clínica esperada</h2>
+
+            <!-- Timeline simplificada -->
+            <div
+                class="max-w-4xl mx-auto space-y-8 relative before:absolute before:inset-0 before:ml-5 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-transparent before:via-gray-300 before:to-transparent">
+                <!-- Item 1 -->
+                <div
+                    class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active">
+                    <div
+                        class="flex items-center justify-center w-10 h-10 rounded-full border-4 border-white bg-neoblue text-white font-bold shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2">
+                        1</div>
+                    <div
+                        class="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] bg-neolight p-6 rounded-2xl border border-gray-100 shadow-sm">
+                        <div class="text-neoblue font-bold text-sm mb-2 uppercase tracking-wide">Corto Plazo</div>
+                        <h4 class="font-bold text-lg text-neodark mb-2">Alivio sintomático</h4>
+                        <p class="text-sm text-gray-600">Mediante control dietético pautado y las primeras acciones
+                            clínicas, buscamos disminuir significativamente la hinchazón, el dolor o malestar
+                            post-ingestas para mejorar tu día a día.</p>
+                    </div>
+                </div>
+                <!-- Item 2 -->
+                <div
+                    class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active">
+                    <div
+                        class="flex items-center justify-center w-10 h-10 rounded-full border-4 border-white bg-neoblue text-white font-bold shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2">
+                        2</div>
+                    <div
+                        class="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] bg-neolight p-6 rounded-2xl border border-gray-100 shadow-sm">
+                        <div class="text-neoblue font-bold text-sm mb-2 uppercase tracking-wide">Medio Plazo</div>
+                        <h4 class="font-bold text-lg text-neodark mb-2">Reequilibrio y repoblación</h4>
+                        <p class="text-sm text-gray-600">Tratada la causa raíz, introducimos pautas precisas con
+                            simbióticos orientados a asentar una microbiota fuerte, resiliente y preparada para el
+                            siguiente paso.</p>
+                    </div>
+                </div>
+                <!-- Item 3 -->
+                <div
+                    class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active">
+                    <div
+                        class="flex items-center justify-center w-10 h-10 rounded-full border-4 border-white bg-neogreen text-white font-bold shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7">
+                            </path>
+                        </svg>
+                    </div>
+                    <div
+                        class="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] bg-neolight p-6 rounded-2xl border border-neogreen shadow-sm">
+                        <div class="text-neogreen font-bold text-sm mb-2 uppercase tracking-wide">Largo Plazo</div>
+                        <h4 class="font-bold text-lg text-neodark mb-2">Flexibilidad Sostenida</h4>
+                        <p class="text-sm text-gray-600">Se busca consolidar poder comer de todo en tu justa medida sin
+                            temores, respaldados por un intestino saludable y autónomo y una tranquilidad psicológica
+                            permanente.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. Sección de Micro-personalización (Split Layout Full Height) -->
+    <section class="flex flex-col lg:flex-row items-stretch bg-neodark text-white p-0 m-0 overflow-hidden">
+        <!-- Image Half (Straight, 100% height) -->
+        <div class="w-full lg:w-1/2 p-0 m-0">
+            <img src="assets/images/sala2.jpg" alt="Instalaciones médicas"
+                class="w-full h-full object-cover min-h-[400px] opacity-90">
+        </div>
+        <!-- Content Half -->
+        <div class="w-full lg:w-1/2 py-20 px-8 lg:px-16 flex flex-col justify-center text-left">
+            <h2 class="text-3xl font-serif font-bold mb-6">Un tratamiento tan único como tu ADN</h2>
+            <div class="space-y-6">
+                <p class="text-lg text-gray-300 leading-relaxed font-light">
+                    Tu intestino contiene una diversidad de microorganismos completamente única. Alentados por estudios
+                    científicos recientes, consideramos que aplicar una recomendación estándar a un sistema biológico
+                    complejo muchas veces no ofrece resultados sostenidos.
+                </p>
+                <p class="text-lg text-gray-300 leading-relaxed font-light">
+                    Nuestra metodología clínica te permite ajustar de manera pausada y cuidada tus pautas nutricionales,
+                    probióticas y de bienestar emocional. Analizamos los datos de tu perfil digestivo para no improvisar
+                    en ningún paso de la recuperación.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. Manejador de Objeciones (FAQ) -->
+    <section class="py-20 bg-neolight border-b border-gray-200">
+        <div class="container mx-auto px-4 max-w-4xl">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-serif font-bold text-neoblue mb-4">Aclarando tus dudas</h2>
+                <p class="text-gray-600">Respuestas desde nuestra perspectiva médica.</p>
+            </div>
+
+            <div class="space-y-4">
+                <div class="bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
+                    <h3 class="font-bold text-neodark mb-2">"Ya seguí la dieta FODMAP y no he mejorado a largo plazo"
+                    </h3>
+                    <p class="text-gray-600 text-sm">La dieta FODMAP es muy útil para el alivio temporal de gases y
+                        malestar, pero no debe ser un modo de vida permanente ni soluciona el origen del problema
+                        bacteriano. Al limitarnos a retirar macronutrientes, a menudo dejamos de nutrir también a
+                        bacterias beneficiosas que ayudan a la inflamación. Nosotros la usamos estratégicamente en fases
+                        iniciales, pero bajo control clínico.</p>
+                </div>
+                <div class="bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
+                    <h3 class="font-bold text-neodark mb-2">"He probado suplementos y probióticos de venta libre sin
+                        éxito"</h3>
+                    <p class="text-gray-600 text-sm">Tomar probióticos genéricos sin un diagnóstico que especifique qué
+                        cepas te faltan puede ser ineficaz. Conociendo el estado minucioso de tu microbiota podemos
+                        prescribir los elementos exactos que tu cuerpo asimilará mejor para restaurar el entorno
+                        intestinal.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. Cierre de Conversión por Diagnóstico -->
+    <section class="py-20 bg-white relative overflow-hidden" id="lead-form-bottom">
+        <div class="container mx-auto px-4 relative z-10">
+            <div class="max-w-4xl mx-auto flex flex-col md:flex-row items-center gap-10">
+                <div class="w-full md:w-1/2">
+                    <h2 class="text-3xl font-serif font-bold text-neodark mb-4">Comienza una etapa de claridad y salud
+                        digestiva</h2>
+                    <p class="text-gray-600 mb-6">Completa este formulario sencillo. Evaluaremos tu situación personal y
+                        te propondremos la vía diagnóstica más adecuada respaldados por el equipo médico de Neogenia y
+                        CMED.</p>
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-center gap-3 text-sm text-gray-700 font-medium">
+                            <span
+                                class="w-6 h-6 rounded-full bg-neogreen/20 text-green-700 flex items-center justify-center">✓</span>
+                            <span>Valoración del cuadro médico</span>
+                        </li>
+                        <li class="flex items-center gap-3 text-sm text-gray-700 font-medium">
+                            <span
+                                class="w-6 h-6 rounded-full bg-neogreen/20 text-green-700 flex items-center justify-center">✓</span>
+                            <span>Presupuesto claro y desglosado</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="w-full md:w-1/2">
+                    <div class="bg-neolight rounded-2xl p-8 border border-gray-200">
+                        <form class="space-y-4" onsubmit="event.preventDefault(); alert('Formulario enviado.');">
+                            <div>
+                                <input type="text"
+                                    class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-neoblue outline-none bg-white"
+                                    placeholder="Nombre y Apellidos" required>
+                            </div>
+                            <div>
+                                <input type="tel"
+                                    class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-neoblue outline-none bg-white"
+                                    placeholder="Teléfono" required>
+                            </div>
+                            <div>
+                                <input type="email"
+                                    class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-neoblue outline-none bg-white"
+                                    placeholder="Dirección de correo electrónico" required>
+                            </div>
+                            <button type="submit" class="w-full btn-primary text-lg mt-2">
+                                CONTINUAR
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-400 py-12">
+        <div class="container mx-auto px-4 text-center text-sm">
+            <p class="mb-4">Especialistas en Microbiota y Bienestar Digestivo. Avalados por 50 años de experiencia
+                técnica CMED.</p>
+            <div class="flex justify-center gap-4 text-gray-500 mb-6">
+                <a href="#" class="hover:text-white">Aviso Legal</a>
+                <a href="#" class="hover:text-white">Política de Privacidad</a>
+            </div>
+            <p>&copy; 2025 Clínica Neogenia by CMED. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+</body>
+
+</html>
