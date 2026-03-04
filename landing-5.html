@@ -124,25 +124,10 @@
 
     <!-- Header -->
     <header class="fixed top-0 left-0 right-0 bg-white/95 backdrop-blur-sm shadow-sm z-50">
-        <div class="container mx-auto px-4 h-20 flex items-center justify-between">
-            <div class="flex items-center gap-2">
-                <div class="flex items-center">
-                    <img src="assets/images/logoneogenia.png" alt="Logo Neogenia" class="h-10 w-auto">
-                    <div class="ml-3 flex flex-col">
-                        <span class="font-bold text-xl text-neoblue leading-none tracking-tight">neogenia</span>
-                        <span class="text-[0.6rem] text-gray-500 tracking-widest uppercase font-semibold">By CMED</span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="hidden md:flex items-center gap-8">
-                <nav class="flex gap-6 text-sm font-medium text-gray-600">
-                    <a href="index.html" class="hover:text-neoblue transition-colors">1. Autoridad</a>
-                    <a href="landing-2.html" class="hover:text-neoblue transition-colors">2. Empatía</a>
-                    <a href="landing-3.html" class="hover:text-neoblue transition-colors">3. Innovación</a>
-                    <a href="landing-4.html" class="hover:text-neoblue transition-colors">4. Directo</a>
-                    <a href="landing-5.html" class="text-neoblue font-bold border-b-2 border-neoblue pb-1">5. Digestivo</a>
-                </nav>
+        <div class="container mx-auto px-4 h-20 flex items-center">
+            <div class="flex items-center">
+                <img src="assets/images/logoneogenia.png" alt="Logo Neogenia" class="h-10 w-auto">
+                
             </div>
         </div>
     </header>
@@ -306,6 +291,18 @@
                     <p class="text-gray-600 text-sm leading-relaxed">Cuando tu microbiota está en desequilibrio, tu energía se resiente. Te sientes agotado sin razón aparente.</p>
                 </div>
             </div>
+        </div>
+    </section>
+
+    <!-- CTA Llamar ahora #1 -->
+    <section class="py-10 bg-neoblue">
+        <div class="container mx-auto px-4 text-center">
+            <p class="text-white text-lg md:text-xl font-semibold mb-4">¿Te sientes identificado? Habla con nuestro equipo ahora mismo.</p>
+            <a href="tel:+34910000000" class="inline-flex items-center gap-3 bg-white text-neoblue font-bold text-lg px-8 py-4 rounded-full shadow-lg hover:bg-gray-100 hover:shadow-xl transition-all hover:-translate-y-0.5">
+                <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                Llamar ahora
+            </a>
+            <p class="text-white/70 text-sm mt-3">Lun - Vie: 9:00 - 20:00 · Sin compromiso</p>
         </div>
     </section>
 
@@ -536,6 +533,18 @@
         </div>
     </section>
 
+    <!-- CTA Llamar ahora #2 -->
+    <section class="py-10 bg-neoblue">
+        <div class="container mx-auto px-4 text-center">
+            <p class="text-white text-lg md:text-xl font-semibold mb-4">¿Quieres saber cómo podemos ayudarte? Llámanos y te lo contamos.</p>
+            <a href="tel:+34910000000" class="inline-flex items-center gap-3 bg-white text-neoblue font-bold text-lg px-8 py-4 rounded-full shadow-lg hover:bg-gray-100 hover:shadow-xl transition-all hover:-translate-y-0.5">
+                <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                Llamar ahora
+            </a>
+            <p class="text-white/70 text-sm mt-3">+34 910 000 000 · Consulta gratuita</p>
+        </div>
+    </section>
+
     <!-- 5. Testimonios -->
     <section class="py-20 bg-neolight">
         <div class="container mx-auto px-4 max-w-5xl">
@@ -665,7 +674,13 @@
 
             <div class="mt-12 text-center bg-neolight rounded-2xl p-8 border border-gray-100">
                 <p class="text-gray-600 mb-4">¿Tienes más preguntas? Estamos aquí para ayudarte.</p>
-                <a href="#lead-form-bottom" class="btn-primary">Contáctanos sin compromiso</a>
+                <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                    <a href="#lead-form-bottom" class="btn-primary">Contáctanos sin compromiso</a>
+                    <a href="tel:+34910000000" class="inline-flex items-center gap-2 btn-secondary">
+                        <svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                        Llamar ahora
+                    </a>
+                </div>
             </div>
         </div>
     </section>
