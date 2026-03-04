@@ -1,0 +1,803 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clínica Neogenia - Recupera tu Bienestar Digestivo</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap"
+        rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        neoblue: '#156b9c',
+                        neogreen: '#2ecc71',
+                        neolight: '#f2f6f8',
+                        neodark: '#2c3e50'
+                    },
+                    fontFamily: {
+                        sans: ['Montserrat', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            color: #4a5568;
+        }
+
+        h1,
+        h2,
+        h3,
+        .font-serif {
+            font-family: 'Playfair Display', serif;
+        }
+
+        .btn-primary {
+            background-color: #156b9c;
+            color: white;
+            border-radius: 9999px;
+            padding: 0.75rem 2rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 14px 0 rgba(21, 107, 156, 0.39);
+            display: inline-block;
+            text-align: center;
+            cursor: pointer;
+            border: none;
+        }
+
+        .btn-primary:hover {
+            background-color: #10527a;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(21, 107, 156, 0.23);
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: #156b9c;
+            border: 2px solid #156b9c;
+            border-radius: 9999px;
+            padding: 0.75rem 2rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            display: inline-block;
+            text-align: center;
+            cursor: pointer;
+        }
+
+        .btn-secondary:hover {
+            background-color: #156b9c;
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        .hero-bg {
+            background-image: url('assets/images/sala2.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .hero-overlay {
+            background: linear-gradient(to right, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0.85) 50%, rgba(255, 255, 255, 0.2) 100%);
+        }
+
+        @media (max-width: 768px) {
+            .hero-overlay {
+                background: linear-gradient(to bottom, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0.95) 100%);
+            }
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+
+        .faq-answer.open {
+            max-height: 300px;
+        }
+
+        .faq-chevron {
+            transition: transform 0.3s ease;
+        }
+
+        .faq-chevron.open {
+            transform: rotate(180deg);
+        }
+    </style>
+</head>
+
+<body class="antialiased bg-white">
+
+    <!-- Header -->
+    <header class="fixed top-0 left-0 right-0 bg-white/95 backdrop-blur-sm shadow-sm z-50">
+        <div class="container mx-auto px-4 h-20 flex items-center justify-between">
+            <div class="flex items-center gap-2">
+                <div class="flex items-center">
+                    <img src="assets/images/logoneogenia.png" alt="Logo Neogenia" class="h-10 w-auto">
+                    <div class="ml-3 flex flex-col">
+                        <span class="font-bold text-xl text-neoblue leading-none tracking-tight">neogenia</span>
+                        <span class="text-[0.6rem] text-gray-500 tracking-widest uppercase font-semibold">By CMED</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="hidden md:flex items-center gap-8">
+                <nav class="flex gap-6 text-sm font-medium text-gray-600">
+                    <a href="index.html" class="hover:text-neoblue transition-colors">1. Autoridad</a>
+                    <a href="landing-2.html" class="hover:text-neoblue transition-colors">2. Empatía</a>
+                    <a href="landing-3.html" class="hover:text-neoblue transition-colors">3. Innovación</a>
+                    <a href="landing-4.html" class="hover:text-neoblue transition-colors">4. Directo</a>
+                    <a href="landing-5.html" class="text-neoblue font-bold border-b-2 border-neoblue pb-1">5. Digestivo</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- 1. Hero Section -->
+    <section class="relative pt-32 pb-16 md:pt-40 md:pb-24 flex items-center min-h-[90vh] hero-bg">
+        <div class="absolute inset-0 hero-overlay z-0"></div>
+
+        <div class="container mx-auto px-4 relative z-10">
+            <div class="flex flex-col md:flex-row items-center gap-12">
+                <!-- Text Content -->
+                <div class="w-full md:w-1/2 lg:w-3/5">
+                    <h1 class="font-serif text-4xl md:text-5xl lg:text-6xl font-bold text-neodark leading-tight mb-6">
+                        Vivir con molestias digestivas no debería ser parte de tu día a día.
+                    </h1>
+                    <p class="text-lg md:text-xl text-gray-700 mb-8 max-w-xl">
+                        Recupera tu bienestar digestivo con el único método científico centrado en tu microbiota. Sin medicación innecesaria, con resultados reales.
+                    </p>
+
+                    <div class="flex flex-col sm:flex-row gap-4 mb-6">
+                        <a href="#lead-form-hero" class="btn-primary text-lg">Quiero sentirme mejor</a>
+                        <a href="#proceso" class="btn-secondary text-lg">Más información</a>
+                    </div>
+
+                    <div class="flex flex-wrap gap-4 text-xs text-gray-500 font-medium">
+                        <span class="flex items-center gap-1">
+                            <svg class="w-4 h-4 text-neogreen" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                            Sin compromiso
+                        </span>
+                        <span class="flex items-center gap-1">
+                            <svg class="w-4 h-4 text-neogreen" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                            Primera consulta valorativa
+                        </span>
+                        <span class="flex items-center gap-1">
+                            <svg class="w-4 h-4 text-neogreen" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                            Respuesta en 24h
+                        </span>
+                    </div>
+                </div>
+
+                <!-- Formulario Hero -->
+                <div class="w-full md:w-1/2 lg:w-2/5" id="lead-form-hero">
+                    <div class="bg-white rounded-2xl shadow-2xl p-8 border border-gray-100 relative overflow-hidden">
+                        <div class="absolute top-0 left-0 w-full h-2 bg-neoblue"></div>
+
+                        <div class="grid grid-cols-2 gap-4 mb-6">
+                            <div class="text-center">
+                                <div class="text-3xl font-bold text-neoblue font-serif">94%</div>
+                                <p class="text-xs text-gray-600 mt-1">Pacientes satisfechos</p>
+                            </div>
+                            <div class="text-center">
+                                <div class="text-3xl font-bold text-neoblue font-serif">3 meses</div>
+                                <p class="text-xs text-gray-600 mt-1">Mejora significativa</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center gap-3 bg-neolight rounded-xl p-3 mb-5">
+                            <div class="w-10 h-10 bg-neoblue/10 rounded-full flex items-center justify-center flex-shrink-0">
+                                <svg class="w-5 h-5 text-neoblue" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <div class="font-bold text-neodark text-sm">Respaldado por CMED</div>
+                                <p class="text-xs text-gray-500">50 años de experiencia clínica</p>
+                            </div>
+                        </div>
+
+                        <form class="space-y-3" onsubmit="event.preventDefault(); alert('Formulario enviado. Nos pondremos en contacto contigo en menos de 24 horas.');">
+                            <div>
+                                <input type="text"
+                                    class="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-neoblue outline-none bg-gray-50 text-sm"
+                                    placeholder="Nombre completo" required>
+                            </div>
+                            <div>
+                                <input type="tel"
+                                    class="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-neoblue outline-none bg-gray-50 text-sm"
+                                    placeholder="Teléfono" required>
+                            </div>
+                            <div>
+                                <input type="email"
+                                    class="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-neoblue outline-none bg-gray-50 text-sm"
+                                    placeholder="tu@email.com" required>
+                            </div>
+                            <button type="submit" class="w-full btn-primary text-base mt-2">
+                                Solicitar mi consulta gratuita
+                            </button>
+                        </form>
+                        <p class="text-xs text-center text-gray-400 mt-3 flex items-center justify-center gap-1">
+                            <svg class="w-3 h-3" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="2">
+                                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                                <polyline points="22 4 12 14.01 9 11.01" />
+                            </svg>
+                            Datos protegidos e historial confidencial.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 2. Identificación de Problemas -->
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-serif font-bold text-neoblue mb-4">¿Te sientes identificado con alguna de estas situaciones?</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">No estás solo. Miles de personas sufren molestias digestivas que afectan su calidad de vida.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
+                <!-- Hinchazón constante -->
+                <div class="bg-neolight rounded-2xl p-8 border border-gray-100 shadow-sm text-center hover:shadow-md transition-shadow">
+                    <div class="w-16 h-16 bg-neoblue/10 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <svg class="w-8 h-8 text-neoblue" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <circle cx="12" cy="12" r="10"/>
+                            <path d="M8 14s1.5 2 4 2 4-2 4-2"/>
+                            <line x1="9" y1="9" x2="9.01" y2="9"/>
+                            <line x1="15" y1="9" x2="15.01" y2="9"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-lg font-bold text-neodark mb-3 font-sans">Hinchazón constante</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed">Sientes inflamación abdominal que no desaparece y te acompaña como un malestar diario que limita tu vida.</p>
+                </div>
+
+                <!-- Digestiones pesadas -->
+                <div class="bg-neolight rounded-2xl p-8 border border-gray-100 shadow-sm text-center hover:shadow-md transition-shadow">
+                    <div class="w-16 h-16 bg-neoblue/10 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <svg class="w-8 h-8 text-neoblue" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M18 8h1a4 4 0 0 1 0 8h-1"/>
+                            <path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/>
+                            <line x1="6" y1="1" x2="6" y2="4"/>
+                            <line x1="10" y1="1" x2="10" y2="4"/>
+                            <line x1="14" y1="1" x2="14" y2="4"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-lg font-bold text-neodark mb-3 font-sans">Digestiones pesadas</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed">Cada comida se convierte en un malestar prolongado. Comes con miedo a cómo te va a sentar.</p>
+                </div>
+
+                <!-- Síntomas crónicos -->
+                <div class="bg-neolight rounded-2xl p-8 border border-gray-100 shadow-sm text-center hover:shadow-md transition-shadow">
+                    <div class="w-16 h-16 bg-neoblue/10 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <svg class="w-8 h-8 text-neoblue" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M22 12h-4l-3 9L9 3l-3 9H2"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-lg font-bold text-neodark mb-3 font-sans">Síntomas crónicos</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed">Llevas tiempo con molestias persistentes que la práctica médica tradicional no ha logrado resolver de forma definitiva.</p>
+                </div>
+
+                <!-- Cansancio persistente -->
+                <div class="bg-neolight rounded-2xl p-8 border border-gray-100 shadow-sm text-center hover:shadow-md transition-shadow">
+                    <div class="w-16 h-16 bg-neoblue/10 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <svg class="w-8 h-8 text-neoblue" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M18.36 6.64a9 9 0 1 1-12.73 0"/>
+                            <line x1="12" y1="2" x2="12" y2="12"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-lg font-bold text-neodark mb-3 font-sans">Cansancio persistente</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed">Cuando tu microbiota está en desequilibrio, tu energía se resiente. Te sientes agotado sin razón aparente.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. Proceso: Cómo recuperar el bienestar (Timeline) -->
+    <section class="py-20 bg-neolight" id="proceso">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-serif font-bold text-neoblue mb-4">Así de simple es recuperar tu bienestar</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Un proceso claro y efectivo que te acompañará en cada paso.</p>
+            </div>
+
+            <!-- Timeline Desktop -->
+            <div class="hidden lg:block max-w-5xl mx-auto">
+                <div class="relative">
+                    <!-- Línea conectora horizontal -->
+                    <div class="absolute top-[52px] left-[12.5%] right-[12.5%] h-[3px] bg-neoblue/20"></div>
+
+                    <div class="grid grid-cols-4 gap-0">
+                        <!-- Paso 1 -->
+                        <div class="flex flex-col items-center text-center px-4">
+                            <div class="w-[104px] h-[104px] rounded-full border-[3px] border-neoblue bg-white flex flex-col items-center justify-center relative z-10 shadow-md">
+                                <svg class="w-8 h-8 text-neoblue mb-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                    <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
+                                    <line x1="16" y1="2" x2="16" y2="6"/>
+                                    <line x1="8" y1="2" x2="8" y2="6"/>
+                                    <line x1="3" y1="10" x2="21" y2="10"/>
+                                </svg>
+                                <span class="text-xs font-bold text-neoblue">Paso 1</span>
+                            </div>
+                            <h3 class="text-lg font-bold text-neodark mt-6 mb-2 font-sans">Reserva tu consulta</h3>
+                            <p class="text-gray-600 text-sm leading-relaxed">Primera visita valorativa sin compromiso. Hablamos de tus síntomas y objetivos.</p>
+                        </div>
+
+                        <!-- Paso 2 -->
+                        <div class="flex flex-col items-center text-center px-4">
+                            <div class="w-[104px] h-[104px] rounded-full border-[3px] border-neoblue bg-white flex flex-col items-center justify-center relative z-10 shadow-md">
+                                <svg class="w-8 h-8 text-neoblue mb-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                                    <polyline points="14 2 14 8 20 8"/>
+                                    <line x1="16" y1="13" x2="8" y2="13"/>
+                                    <line x1="16" y1="17" x2="8" y2="17"/>
+                                    <polyline points="10 9 9 9 8 9"/>
+                                </svg>
+                                <span class="text-xs font-bold text-neoblue">Paso 2</span>
+                            </div>
+                            <h3 class="text-lg font-bold text-neodark mt-6 mb-2 font-sans">Análisis completo</h3>
+                            <p class="text-gray-600 text-sm leading-relaxed">Realizamos pruebas específicas de microbiota con tecnología PCR avanzada.</p>
+                        </div>
+
+                        <!-- Paso 3 -->
+                        <div class="flex flex-col items-center text-center px-4">
+                            <div class="w-[104px] h-[104px] rounded-full border-[3px] border-neoblue bg-white flex flex-col items-center justify-center relative z-10 shadow-md">
+                                <svg class="w-8 h-8 text-neoblue mb-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                    <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+                                </svg>
+                                <span class="text-xs font-bold text-neoblue">Paso 3</span>
+                            </div>
+                            <h3 class="text-lg font-bold text-neodark mt-6 mb-2 font-sans">Plan personalizado</h3>
+                            <p class="text-gray-600 text-sm leading-relaxed">Diseñamos tu tratamiento único: nutrición, suplementación y seguimiento médico.</p>
+                        </div>
+
+                        <!-- Paso 4 -->
+                        <div class="flex flex-col items-center text-center px-4">
+                            <div class="w-[104px] h-[104px] rounded-full border-[3px] border-neogreen bg-white flex flex-col items-center justify-center relative z-10 shadow-md">
+                                <svg class="w-8 h-8 text-neogreen mb-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                                    <polyline points="22 4 12 14.01 9 11.01"/>
+                                </svg>
+                                <span class="text-xs font-bold text-neogreen">Paso 4</span>
+                            </div>
+                            <h3 class="text-lg font-bold text-neodark mt-6 mb-2 font-sans">Recupera tu vida</h3>
+                            <p class="text-gray-600 text-sm leading-relaxed">Seguimiento continuo hasta que vuelvas a sentirte bien de verdad.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Timeline Mobile/Tablet -->
+            <div class="lg:hidden max-w-md mx-auto">
+                <div class="relative pl-12">
+                    <!-- Línea vertical -->
+                    <div class="absolute left-[23px] top-0 bottom-0 w-[3px] bg-neoblue/20"></div>
+
+                    <!-- Paso 1 -->
+                    <div class="relative mb-10">
+                        <div class="absolute -left-12 w-[48px] h-[48px] rounded-full border-[3px] border-neoblue bg-white flex items-center justify-center z-10 shadow-md">
+                            <svg class="w-5 h-5 text-neoblue" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
+                                <line x1="16" y1="2" x2="16" y2="6"/>
+                                <line x1="8" y1="2" x2="8" y2="6"/>
+                                <line x1="3" y1="10" x2="21" y2="10"/>
+                            </svg>
+                        </div>
+                        <div class="bg-white rounded-xl p-5 shadow-sm border border-gray-100">
+                            <span class="text-xs font-bold text-neoblue uppercase tracking-wider">Paso 1</span>
+                            <h3 class="text-lg font-bold text-neodark mt-1 mb-2 font-sans">Reserva tu consulta</h3>
+                            <p class="text-gray-600 text-sm leading-relaxed">Primera visita valorativa sin compromiso. Hablamos de tus síntomas y objetivos.</p>
+                        </div>
+                    </div>
+
+                    <!-- Paso 2 -->
+                    <div class="relative mb-10">
+                        <div class="absolute -left-12 w-[48px] h-[48px] rounded-full border-[3px] border-neoblue bg-white flex items-center justify-center z-10 shadow-md">
+                            <svg class="w-5 h-5 text-neoblue" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                                <polyline points="14 2 14 8 20 8"/>
+                                <line x1="16" y1="13" x2="8" y2="13"/>
+                                <line x1="16" y1="17" x2="8" y2="17"/>
+                            </svg>
+                        </div>
+                        <div class="bg-white rounded-xl p-5 shadow-sm border border-gray-100">
+                            <span class="text-xs font-bold text-neoblue uppercase tracking-wider">Paso 2</span>
+                            <h3 class="text-lg font-bold text-neodark mt-1 mb-2 font-sans">Análisis completo</h3>
+                            <p class="text-gray-600 text-sm leading-relaxed">Realizamos pruebas específicas de microbiota con tecnología PCR avanzada.</p>
+                        </div>
+                    </div>
+
+                    <!-- Paso 3 -->
+                    <div class="relative mb-10">
+                        <div class="absolute -left-12 w-[48px] h-[48px] rounded-full border-[3px] border-neoblue bg-white flex items-center justify-center z-10 shadow-md">
+                            <svg class="w-5 h-5 text-neoblue" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+                            </svg>
+                        </div>
+                        <div class="bg-white rounded-xl p-5 shadow-sm border border-gray-100">
+                            <span class="text-xs font-bold text-neoblue uppercase tracking-wider">Paso 3</span>
+                            <h3 class="text-lg font-bold text-neodark mt-1 mb-2 font-sans">Plan personalizado</h3>
+                            <p class="text-gray-600 text-sm leading-relaxed">Diseñamos tu tratamiento único: nutrición, suplementación y seguimiento médico.</p>
+                        </div>
+                    </div>
+
+                    <!-- Paso 4 -->
+                    <div class="relative">
+                        <div class="absolute -left-12 w-[48px] h-[48px] rounded-full border-[3px] border-neogreen bg-white flex items-center justify-center z-10 shadow-md">
+                            <svg class="w-5 h-5 text-neogreen" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                                <polyline points="22 4 12 14.01 9 11.01"/>
+                            </svg>
+                        </div>
+                        <div class="bg-white rounded-xl p-5 shadow-sm border border-gray-100">
+                            <span class="text-xs font-bold text-neogreen uppercase tracking-wider">Paso 4</span>
+                            <h3 class="text-lg font-bold text-neodark mt-1 mb-2 font-sans">Recupera tu vida</h3>
+                            <p class="text-gray-600 text-sm leading-relaxed">Seguimiento continuo hasta que vuelvas a sentirte bien de verdad.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. Confianza / Diferenciación -->
+    <section class="flex flex-col lg:flex-row items-stretch bg-white p-0 m-0 overflow-hidden">
+        <!-- Image Half -->
+        <div class="w-full lg:w-1/2 p-0 m-0 flex items-center bg-neolight">
+            <img src="assets/images/eequipo.jpg" alt="El equipo de Neogenia"
+                class="w-full h-auto object-contain">
+        </div>
+        <!-- Content Half -->
+        <div class="w-full lg:w-1/2 py-20 px-8 lg:px-16 flex flex-col justify-center">
+            <div class="mb-10">
+                <h2 class="text-3xl font-serif font-bold text-neoblue mb-4">Por qué confiar en Clínica Neogenia</h2>
+                <p class="text-gray-600 border-l-4 border-neogreen pl-4">No somos una clínica más. Somos especialistas en lo que hacemos.</p>
+            </div>
+
+            <div class="space-y-6">
+                <div class="bg-neolight p-6 rounded-xl shadow-sm border border-gray-100">
+                    <div class="flex items-start gap-4">
+                        <div class="w-10 h-10 bg-neoblue/10 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                            <svg class="w-5 h-5 text-neoblue" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="10"/>
+                                <path d="M12 16v-4"/>
+                                <path d="M12 8h.01"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-neodark mb-1 text-lg font-sans">Especialización única</h4>
+                            <p class="text-gray-600 text-sm leading-relaxed">Enfoque 100% en microbiota y salud digestiva. No tratamos síntomas aislados: analizamos tu organismo como un sistema interconectado.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-neolight p-6 rounded-xl shadow-sm border border-gray-100">
+                    <div class="flex items-start gap-4">
+                        <div class="w-10 h-10 bg-neoblue/10 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                            <svg class="w-5 h-5 text-neoblue" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-neodark mb-1 text-lg font-sans">Respaldo médico CMED</h4>
+                            <p class="text-gray-600 text-sm leading-relaxed">Contamos con el aval de profesionales médicos reconocidos y más de 50 años de experiencia clínica. Tu seguridad es nuestra prioridad.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-neolight p-6 rounded-xl shadow-sm border border-gray-100">
+                    <div class="flex items-start gap-4">
+                        <div class="w-10 h-10 bg-neogreen/10 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                            <svg class="w-5 h-5 text-neogreen" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/>
+                                <polyline points="16 7 22 7 22 13"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-neodark mb-1 text-lg font-sans">Resultados reales</h4>
+                            <p class="text-gray-600 text-sm leading-relaxed">El 94% de nuestros pacientes experimenta una mejora significativa en 3 meses. Resultados medibles y avalados por la ciencia.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-neolight p-6 rounded-xl shadow-sm border border-gray-100">
+                    <div class="flex items-start gap-4">
+                        <div class="w-10 h-10 bg-neoblue/10 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                            <svg class="w-5 h-5 text-neoblue" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                                <circle cx="9" cy="7" r="4"/>
+                                <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+                                <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-neodark mb-1 text-lg font-sans">Atención personalizada</h4>
+                            <p class="text-gray-600 text-sm leading-relaxed">Cada tratamiento es único, adaptado a tu realidad. Combinamos nutrición, probióticos con respaldo científico y apoyo emocional.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. Testimonios -->
+    <section class="py-20 bg-neolight">
+        <div class="container mx-auto px-4 max-w-5xl">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-serif font-bold text-neodark mb-4">Historias reales de personas que recuperaron su bienestar</h2>
+                <p class="text-gray-600">Lee lo que dicen quienes ya dieron el paso.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Testimonio 1 -->
+                <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100">
+                    <div class="flex items-center gap-1 mb-4">
+                        <svg class="w-5 h-5 text-yellow-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                        <svg class="w-5 h-5 text-yellow-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                        <svg class="w-5 h-5 text-yellow-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                        <svg class="w-5 h-5 text-yellow-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                        <svg class="w-5 h-5 text-yellow-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                    </div>
+                    <p class="text-gray-700 italic mb-6 text-sm leading-relaxed">"Llevaba años sufriendo con el intestino irritable sin encontrar solución. En solo 2 meses con Neogenia noté una mejora increíble. Ahora puedo comer sin miedo y he recuperado mi calidad de vida."</p>
+                    <div class="border-t border-gray-100 pt-4">
+                        <div class="font-bold text-neodark">María G.</div>
+                        <div class="text-sm text-gray-500">42 años · Síndrome de intestino irritable</div>
+                    </div>
+                </div>
+
+                <!-- Testimonio 2 -->
+                <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100">
+                    <div class="flex items-center gap-1 mb-4">
+                        <svg class="w-5 h-5 text-yellow-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                        <svg class="w-5 h-5 text-yellow-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                        <svg class="w-5 h-5 text-yellow-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                        <svg class="w-5 h-5 text-yellow-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                        <svg class="w-5 h-5 text-yellow-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                    </div>
+                    <p class="text-gray-700 italic mb-6 text-sm leading-relaxed">"El análisis de microbiota fue revelador. Por primera vez entendí qué estaba pasando en mi cuerpo. El acompañamiento del equipo ha sido excepcional y mi hinchazón ha mejorado enormemente."</p>
+                    <div class="border-t border-gray-100 pt-4">
+                        <div class="font-bold text-neodark">Carlos R.</div>
+                        <div class="text-sm text-gray-500">38 años · Hinchazón crónica</div>
+                    </div>
+                </div>
+
+                <!-- Testimonio 3 -->
+                <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100">
+                    <div class="flex items-center gap-1 mb-4">
+                        <svg class="w-5 h-5 text-yellow-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                        <svg class="w-5 h-5 text-yellow-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                        <svg class="w-5 h-5 text-yellow-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                        <svg class="w-5 h-5 text-yellow-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                        <svg class="w-5 h-5 text-yellow-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                    </div>
+                    <p class="text-gray-700 italic mb-6 text-sm leading-relaxed">"El trato en Neogenia es excepcional. Gracias a su plan personalizado ya no necesito medicación constante. Mi calidad de vida ha mejorado más de lo que imaginaba."</p>
+                    <div class="border-t border-gray-100 pt-4">
+                        <div class="font-bold text-neodark">Ana P.</div>
+                        <div class="text-sm text-gray-500">45 años · Digestiones pesadas</div>
+                    </div>
+                </div>
+            </div>
+
+            <p class="text-xs text-center text-gray-400 mt-8">* Testimonios reales de pacientes. Resultados individuales pueden variar.</p>
+        </div>
+    </section>
+
+    <!-- 6. FAQ -->
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-4 max-w-3xl">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-serif font-bold text-neoblue mb-4">Preguntas frecuentes</h2>
+                <p class="text-gray-600">Resolvemos tus dudas más comunes.</p>
+            </div>
+
+            <div class="space-y-4">
+                <!-- FAQ 1 -->
+                <div class="bg-neolight rounded-xl border border-gray-100 shadow-sm overflow-hidden">
+                    <button onclick="toggleFaq(this)" class="w-full flex items-center justify-between p-6 text-left">
+                        <h4 class="font-bold text-neodark text-lg font-sans pr-4">¿Cuánto tiempo tarda el tratamiento en hacer efecto?</h4>
+                        <svg class="w-5 h-5 text-neoblue flex-shrink-0 faq-chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p class="px-6 pb-6 text-gray-600 text-sm leading-relaxed">La mayoría de nuestros pacientes comienzan a notar mejoras entre las 4 y 8 primeras semanas de tratamiento. El 94% experimenta una mejora significativa en los primeros 3 meses. Sin embargo, cada caso es único y los tiempos pueden variar según la complejidad de la disbiosis y la respuesta individual.</p>
+                    </div>
+                </div>
+
+                <!-- FAQ 2 -->
+                <div class="bg-neolight rounded-xl border border-gray-100 shadow-sm overflow-hidden">
+                    <button onclick="toggleFaq(this)" class="w-full flex items-center justify-between p-6 text-left">
+                        <h4 class="font-bold text-neodark text-lg font-sans pr-4">¿La primera consulta tiene algún coste?</h4>
+                        <svg class="w-5 h-5 text-neoblue flex-shrink-0 faq-chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p class="px-6 pb-6 text-gray-600 text-sm leading-relaxed">No. La primera consulta valorativa es completamente gratuita y sin compromiso. Queremos conocer tu caso, escucharte y valorar cómo podemos ayudarte antes de que tomes cualquier decisión.</p>
+                    </div>
+                </div>
+
+                <!-- FAQ 3 -->
+                <div class="bg-neolight rounded-xl border border-gray-100 shadow-sm overflow-hidden">
+                    <button onclick="toggleFaq(this)" class="w-full flex items-center justify-between p-6 text-left">
+                        <h4 class="font-bold text-neodark text-lg font-sans pr-4">¿Necesito dejar mi medicación actual?</h4>
+                        <svg class="w-5 h-5 text-neoblue flex-shrink-0 faq-chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p class="px-6 pb-6 text-gray-600 text-sm leading-relaxed">No es necesario dejar tu medicación. Nuestro equipo médico trabajará de forma coordinada con tus tratamientos actuales. Siempre buscamos el enfoque menos invasivo posible, y al contar con el respaldo de CMED, podemos prescribir terapias complementarias si tu caso lo requiere.</p>
+                    </div>
+                </div>
+
+                <!-- FAQ 4 -->
+                <div class="bg-neolight rounded-xl border border-gray-100 shadow-sm overflow-hidden">
+                    <button onclick="toggleFaq(this)" class="w-full flex items-center justify-between p-6 text-left">
+                        <h4 class="font-bold text-neodark text-lg font-sans pr-4">¿Qué incluye el análisis de microbiota?</h4>
+                        <svg class="w-5 h-5 text-neoblue flex-shrink-0 faq-chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p class="px-6 pb-6 text-gray-600 text-sm leading-relaxed">Nuestro análisis incluye estudios de ADN bacteriano mediante tecnología PCR avanzada en heces, junto con una evaluación clínica integral. Esto nos permite identificar desequilibrios específicos en tu microbiota (disbiosis), sobrecrecimiento bacteriano y otros factores que están afectando tu salud digestiva.</p>
+                    </div>
+                </div>
+
+                <!-- FAQ 5 -->
+                <div class="bg-neolight rounded-xl border border-gray-100 shadow-sm overflow-hidden">
+                    <button onclick="toggleFaq(this)" class="w-full flex items-center justify-between p-6 text-left">
+                        <h4 class="font-bold text-neodark text-lg font-sans pr-4">¿Cuántas sesiones de seguimiento necesitaré?</h4>
+                        <svg class="w-5 h-5 text-neoblue flex-shrink-0 faq-chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p class="px-6 pb-6 text-gray-600 text-sm leading-relaxed">El número de sesiones varía según la complejidad de cada caso. Normalmente incluimos revisiones periódicas para ajustar el plan de tratamiento según tu evolución. Nuestro seguimiento es continuo y cercano hasta que alcances un bienestar real y sostenido.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-12 text-center bg-neolight rounded-2xl p-8 border border-gray-100">
+                <p class="text-gray-600 mb-4">¿Tienes más preguntas? Estamos aquí para ayudarte.</p>
+                <a href="#lead-form-bottom" class="btn-primary">Contáctanos sin compromiso</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 7. CTA Final + Formulario -->
+    <section class="py-20 bg-neolight relative overflow-hidden" id="lead-form-bottom">
+        <div class="absolute top-0 right-0 w-64 h-64 bg-neoblue/10 rounded-full blur-3xl -mr-20 -mt-20"></div>
+        <div class="absolute bottom-0 left-0 w-80 h-80 bg-neogreen/10 rounded-full blur-3xl -ml-20 -mb-20"></div>
+
+        <div class="container mx-auto px-4 relative z-10">
+            <div class="max-w-4xl mx-auto bg-white rounded-3xl shadow-lg p-8 md:p-12 border border-gray-200">
+                <div class="text-center mb-8">
+                    <h2 class="text-3xl font-serif font-bold text-neodark mb-4">Da el primer paso hacia tu bienestar</h2>
+                    <p class="text-gray-600">Reserva tu consulta gratuita. Sin compromiso, sin presión. Solo queremos ayudarte.</p>
+                </div>
+
+                <form class="space-y-6" onsubmit="event.preventDefault(); alert('Formulario enviado con éxito. Nos pondremos en contacto contigo en menos de 24 horas.');">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-sm font-bold text-neoblue mb-1">Nombre completo</label>
+                            <input type="text"
+                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-neoblue outline-none bg-gray-50"
+                                placeholder="Tu nombre y apellidos" required>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-bold text-neoblue mb-1">Email</label>
+                            <input type="email"
+                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-neoblue outline-none bg-gray-50"
+                                placeholder="tu@email.com" required>
+                        </div>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-bold text-neoblue mb-1">Teléfono</label>
+                        <input type="tel"
+                            class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-neoblue outline-none bg-gray-50"
+                            placeholder="Tu número de teléfono" required>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-bold text-neoblue mb-1">Cuéntanos tu caso</label>
+                        <textarea rows="4"
+                            class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-neoblue outline-none bg-gray-50 resize-none"
+                            placeholder="Describe brevemente tus síntomas y desde cuándo los experimentas..."></textarea>
+                    </div>
+                    <div class="pt-4 text-center">
+                        <button type="submit" class="btn-primary text-lg px-12 uppercase tracking-wide">
+                            Solicitar mi consulta gratuita
+                        </button>
+                    </div>
+                    <p class="text-xs text-center text-gray-400 mt-2">
+                        Al enviar este formulario aceptas nuestra <a href="#" class="underline hover:text-neoblue">política de privacidad</a>. Tus datos están protegidos y no serán compartidos con terceros.
+                    </p>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-400 py-16">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
+                <!-- Clínica Info -->
+                <div>
+                    <div class="flex items-center mb-4">
+                        <img src="assets/images/logoneogenia.png" alt="Logo Neogenia" class="h-8 w-auto brightness-200">
+                        <div class="ml-3 flex flex-col">
+                            <span class="font-bold text-lg text-white leading-none tracking-tight">neogenia</span>
+                            <span class="text-[0.5rem] text-gray-500 tracking-widest uppercase font-semibold">By CMED</span>
+                        </div>
+                    </div>
+                    <p class="text-sm leading-relaxed mb-4">Especialistas en microbiota y salud digestiva. Respaldo médico CMED.</p>
+                    <div class="flex items-center gap-2 text-sm text-neogreen">
+                        <svg class="w-4 h-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+                        Respuesta en menos de 24 horas
+                    </div>
+                </div>
+
+                <!-- Contacto -->
+                <div>
+                    <h4 class="text-white font-bold mb-4 font-sans text-sm uppercase tracking-wider">Contacto</h4>
+                    <div class="space-y-3 text-sm">
+                        <div class="flex items-center gap-2">
+                            <svg class="w-4 h-4 text-neoblue" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                            <span>+34 910 000 000</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <svg class="w-4 h-4 text-neoblue" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                            <span>info@clinicaneogenia.com</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <svg class="w-4 h-4 text-neoblue" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                            <span>Lun - Vie: 9:00 - 20:00</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Enlaces -->
+                <div>
+                    <h4 class="text-white font-bold mb-4 font-sans text-sm uppercase tracking-wider">Enlaces</h4>
+                    <nav class="space-y-2 text-sm">
+                        <a href="#" class="block hover:text-white transition-colors">Sobre nosotros</a>
+                        <a href="#" class="block hover:text-white transition-colors">Servicios</a>
+                        <a href="#" class="block hover:text-white transition-colors">Política de privacidad</a>
+                        <a href="#" class="block hover:text-white transition-colors">Términos y condiciones</a>
+                        <a href="#" class="block hover:text-white transition-colors">Contacto</a>
+                    </nav>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-800 pt-8 text-center text-sm">
+                <p>&copy; 2026 Clínica Neogenia. Hecho con <span class="text-red-400">&hearts;</span> para tu salud.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function toggleFaq(button) {
+            const answer = button.nextElementSibling;
+            const chevron = button.querySelector('.faq-chevron');
+            const isOpen = answer.classList.contains('open');
+
+            document.querySelectorAll('.faq-answer.open').forEach(el => {
+                el.classList.remove('open');
+                el.previousElementSibling.querySelector('.faq-chevron').classList.remove('open');
+            });
+
+            if (!isOpen) {
+                answer.classList.add('open');
+                chevron.classList.add('open');
+            }
+        }
+    </script>
+
+</body>
+
+</html>
