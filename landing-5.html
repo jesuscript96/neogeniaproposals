@@ -1081,10 +1081,11 @@
             }
         }
 
+        const SHEETS_URL = 'https://script.google.com/macros/s/AKfycbzuY9xGuT7NA-utxDmC54rAukfaDycprw-1CG_LhMoKw42ll1qfAfHf__MjJSA8NHex0Q/exec';
+
         function handleSubmit(event, form) {
             event.preventDefault();
 
-            // Validaciones HTML5 (por si el navegador no las aplica automáticamente)
             if (!form.checkValidity()) {
                 form.reportValidity();
                 return;
@@ -1098,45 +1099,57 @@
             submitBtn.disabled = true;
             submitBtn.innerHTML = 'Enviando...';
 
-            emailjs.sendForm('service_sb1hg6z', 'template_aw41htv', form)
+            // Extraer datos del formulario
+            const fd = new FormData(form);
+            const payload = {
+                nombre: fd.get('nombre') || '',
+                email: fd.get('email') || '',
+                telefono: fd.get('telefono') || '',
+                empresa: fd.get('empresa') || '',
+                asunto: fd.get('asunto') || '',
+                mensaje: fd.get('mensaje') || ''
+            };
+
+            // --- Envíos paralelos ---
+            // 1. EmailJS: notificación a la clínica
+            // 2. EmailJS: auto-reply al lead  (sustituye template_AUTOREPLY por tu ID real)
+            // 3. Google Sheets: registro del lead
+            const sendNotification = emailjs.sendForm('service_sb1hg6z', 'template_aw41htv', form);
+            const sendAutoreply = emailjs.sendForm('service_sb1hg6z', 'template_AUTOREPLY', form);
+            const sendToSheets = fetch(SHEETS_URL, {
+                method: 'POST',
+                mode: 'no-cors',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(payload)
+            });
+
+            Promise.all([sendNotification, sendAutoreply, sendToSheets])
                 .then(() => {
-                    // 1. Enviar evento a Google Tag Manager o similar para trackeo de conversiones
+                    // GTM conversion event
                     if (window.dataLayer) {
-                        window.dataLayer.push({
-                            'event': 'form_submission', // Nombre del evento que GTM debe registrar
-                            'formId': form.id
-                        });
-                        console.log("Evento enviado a GTM:", 'form_submission');
-                    } else {
-                        console.log("GTM dataLayer no encontrado. Evento 'form_submission' simulado.");
+                        window.dataLayer.push({ 'event': 'form_submission', 'formId': form.id });
                     }
 
-                    // 2. Mostrar mensaje de éxito en la propia página sin redirigir (UX más directa)
-                    messagesDiv.textContent = '¡Gracias! Hemos recibido tu solicitud correctamente. Nos pondremos en contacto contigo lo antes posible.';
+                    messagesDiv.textContent = '¡Gracias! Hemos recibido tu solicitud. Te hemos enviado un correo de confirmación.';
                     messagesDiv.classList.remove('hidden', 'bg-red-100', 'text-red-700');
                     messagesDiv.classList.add('bg-green-100', 'text-green-800', 'border', 'border-green-200');
 
-                    // 3. Restaurar botón y limpiar formulario
                     form.reset();
                     submitBtn.disabled = false;
                     submitBtn.innerHTML = originalText;
 
-                    // Ocultar mensaje después de 8 segundos
-                    setTimeout(() => {
-                        messagesDiv.classList.add('hidden');
-                    }, 8000);
-                }, (error) => {
+                    setTimeout(() => { messagesDiv.classList.add('hidden'); }, 8000);
+                })
+                .catch((error) => {
                     console.log('FAILED...', error);
-                    messagesDiv.textContent = 'Hubo un error al enviar tu solicitud. Por favor, inténtalo de nuevo más tarde o contáctanos por teléfono.';
+                    messagesDiv.textContent = 'Hubo un error al enviar tu solicitud. Por favor, inténtalo de nuevo o contáctanos por teléfono.';
                     messagesDiv.classList.remove('hidden', 'bg-green-100', 'text-green-800');
                     messagesDiv.classList.add('bg-red-100', 'text-red-700', 'border', 'border-red-200');
 
                     submitBtn.disabled = false;
                     submitBtn.innerHTML = originalText;
 
-                    setTimeout(() => {
-                        messagesDiv.classList.add('hidden');
-                    }, 8000);
+                    setTimeout(() => { messagesDiv.classList.add('hidden'); }, 8000);
                 });
         }
     </script>
