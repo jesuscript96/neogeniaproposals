@@ -1115,7 +1115,8 @@
             // 2. EmailJS: auto-reply al lead  (sustituye template_AUTOREPLY por tu ID real)
             // 3. Google Sheets: registro del lead
             const sendNotification = emailjs.sendForm('service_sb1hg6z', 'template_aw41htv', form);
-            const sendAutoreply = emailjs.sendForm('service_sb1hg6z', 'template_AUTOREPLY', form);
+            // Auto-reply: sustituye template_AUTOREPLY por tu ID real cuando lo tengas
+            const sendAutoreply = emailjs.sendForm('service_sb1hg6z', 'template_AUTOREPLY', form).catch(() => { });
             const sendToSheets = fetch(SHEETS_URL, {
                 method: 'POST',
                 mode: 'no-cors',
