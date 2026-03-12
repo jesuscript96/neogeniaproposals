@@ -1081,7 +1081,7 @@
             }
         }
 
-        const SHEETS_URL = 'https://script.google.com/macros/s/AKfycbzuswvJtn0TKDCUHPIn8ZzSMkbD9bDOgegVdGMfY5bPWw0NvEdx2rJSLDrXSLJwcw2IxCg/exec';
+        const SHEETS_URL = 'https://script.google.com/macros/s/AKfycbz-s1nP9qkju3nfsk-g8hf7yJZNbJuVWBj9AVRcLcj1VD7xpIBqvbHF7_66CkTyCHCnPA/exec';
 
         function handleSubmit(event, form) {
             event.preventDefault();
@@ -1116,11 +1116,9 @@
             // 3. Google Sheets: registro del lead
             const sendNotification = emailjs.sendForm('service_sb1hg6z', 'template_aw41htv', form);
             const sendAutoreply = emailjs.sendForm('service_sb1hg6z', 'template_AUTOREPLY', form);
-            const sendToSheets = fetch(SHEETS_URL, {
-                method: 'POST',
-                mode: 'no-cors',
-                headers: { 'Content-Type': 'text/plain' }, // text/plain = "simple request", sin preflight CORS
-                body: JSON.stringify(payload)
+            const sendToSheets = fetch(SHEETS_URL + '?' + new URLSearchParams(payload).toString(), {
+                method: 'GET',
+                mode: 'no-cors'
             });
 
             Promise.all([sendNotification, sendAutoreply, sendToSheets])
