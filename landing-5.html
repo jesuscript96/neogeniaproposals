@@ -1081,7 +1081,7 @@
             }
         }
 
-        const SHEETS_URL = 'https://script.google.com/macros/s/AKfycbzuY9xGuT7NA-utxDmC54rAukfaDycprw-1CG_LhMoKw42ll1qfAfHf__MjJSA8NHex0Q/exec';
+        const SHEETS_URL = 'https://script.google.com/macros/s/AKfycbzuswvJtn0TKDCUHPIn8ZzSMkbD9bDOgegVdGMfY5bPWw0NvEdx2rJSLDrXSLJwcw2IxCg/exec';
 
         function handleSubmit(event, form) {
             event.preventDefault();
@@ -1119,7 +1119,7 @@
             const sendToSheets = fetch(SHEETS_URL, {
                 method: 'POST',
                 mode: 'no-cors',
-                headers: { 'Content-Type': 'application/json' },
+                headers: { 'Content-Type': 'text/plain' }, // text/plain = "simple request", sin preflight CORS
                 body: JSON.stringify(payload)
             });
 
