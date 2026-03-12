@@ -12,6 +12,17 @@
                     'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
         })(window, document, 'script', 'dataLayer', 'GTM-57MLQNBG');</script>
     <!-- End Google Tag Manager -->
+
+    <!-- EmailJS -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function () {
+            emailjs.init({
+                publicKey: "AoJ-f1IqBNcxuSfvk",
+            });
+        })();
+    </script>
+    <!-- End EmailJS -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Clínica Neogenia - Recupera tu Bienestar Digestivo</title>
@@ -232,15 +243,29 @@
                                     placeholder="Nombre completo" required minlength="2">
                             </div>
                             <div>
-                                <input type="tel" name="telefono"
-                                    class="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-neoblue outline-none bg-gray-50 text-sm"
-                                    placeholder="Teléfono" required pattern="[0-9]{9,15}"
-                                    title="Introduce un número de teléfono válido (entre 9 y 15 dígitos)">
-                            </div>
-                            <div>
                                 <input type="email" name="email"
                                     class="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-neoblue outline-none bg-gray-50 text-sm"
                                     placeholder="tu@email.com" required>
+                            </div>
+                            <div>
+                                <input type="tel" name="telefono"
+                                    class="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-neoblue outline-none bg-gray-50 text-sm"
+                                    placeholder="Teléfono (Opcional)" pattern="[0-9]{9,15}">
+                            </div>
+                            <div>
+                                <input type="text" name="empresa"
+                                    class="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-neoblue outline-none bg-gray-50 text-sm"
+                                    placeholder="Empresa (Opcional)">
+                            </div>
+                            <div>
+                                <input type="text" name="asunto"
+                                    class="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-neoblue outline-none bg-gray-50 text-sm"
+                                    placeholder="Asunto" required>
+                            </div>
+                            <div>
+                                <textarea name="mensaje" rows="2"
+                                    class="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-neoblue outline-none bg-gray-50 text-sm resize-none"
+                                    placeholder="Mensaje" required></textarea>
                             </div>
                             <div class="form-messages hidden text-sm text-center py-2 rounded-lg mt-2"></div>
                             <button type="submit" class="w-full btn-primary text-base mt-2">
@@ -922,18 +947,31 @@
                                 placeholder="tu@email.com" required>
                         </div>
                     </div>
-                    <div>
-                        <label class="block text-sm font-bold text-neoblue mb-1">Teléfono</label>
-                        <input type="tel" name="telefono"
-                            class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-neoblue outline-none bg-gray-50"
-                            placeholder="Tu número de teléfono" required pattern="[0-9]{9,15}"
-                            title="Introduce un número de teléfono válido (entre 9 y 15 dígitos)">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-sm font-bold text-neoblue mb-1">Teléfono (Opcional)</label>
+                            <input type="tel" name="telefono"
+                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-neoblue outline-none bg-gray-50"
+                                placeholder="Tu número de teléfono" pattern="[0-9]{9,15}">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-bold text-neoblue mb-1">Empresa (Opcional)</label>
+                            <input type="text" name="empresa"
+                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-neoblue outline-none bg-gray-50"
+                                placeholder="Tu empresa">
+                        </div>
                     </div>
                     <div>
-                        <label class="block text-sm font-bold text-neoblue mb-1">Cuéntanos tu caso</label>
-                        <textarea rows="4" name="caso"
+                        <label class="block text-sm font-bold text-neoblue mb-1">Asunto</label>
+                        <input type="text" name="asunto"
+                            class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-neoblue outline-none bg-gray-50"
+                            placeholder="Motivo de tu consulta" required>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-bold text-neoblue mb-1">Mensaje</label>
+                        <textarea rows="4" name="mensaje"
                             class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-neoblue outline-none bg-gray-50 resize-none"
-                            placeholder="Describe brevemente tus síntomas y desde cuándo los experimentas..."></textarea>
+                            placeholder="Describe brevemente tu caso o consulta..." required></textarea>
                     </div>
                     <div class="form-messages hidden text-sm text-center py-3 rounded-lg mt-2"></div>
                     <div class="pt-4 text-center">
@@ -1060,35 +1098,46 @@
             submitBtn.disabled = true;
             submitBtn.innerHTML = 'Enviando...';
 
-            // Simular petición al backend, luego aquí en el futuro código tu cliente conectará su fetch() o AJAX
-            setTimeout(() => {
-                // 1. Enviar evento a Google Tag Manager o similar para trackeo de conversiones
-                if (window.dataLayer) {
-                    window.dataLayer.push({
-                        'event': 'form_submission', // Nombre del evento que GTM debe registrar
-                        'formId': form.id
-                    });
-                    console.log("Evento enviado a GTM:", 'form_submission');
-                } else {
-                    console.log("GTM dataLayer no encontrado. Evento 'form_submission' simulado.");
-                }
+            emailjs.sendForm('service_sb1hg6z', 'template_aw41htv', form)
+                .then(() => {
+                    // 1. Enviar evento a Google Tag Manager o similar para trackeo de conversiones
+                    if (window.dataLayer) {
+                        window.dataLayer.push({
+                            'event': 'form_submission', // Nombre del evento que GTM debe registrar
+                            'formId': form.id
+                        });
+                        console.log("Evento enviado a GTM:", 'form_submission');
+                    } else {
+                        console.log("GTM dataLayer no encontrado. Evento 'form_submission' simulado.");
+                    }
 
-                // 2. Mostrar mensaje de éxito en la propia página sin redirigir (UX más directa)
-                messagesDiv.textContent = '¡Gracias! Hemos recibido tu solicitud correctamente. Nos pondremos en contacto contigo lo antes posible.';
-                messagesDiv.classList.remove('hidden', 'bg-red-100', 'text-red-700');
-                messagesDiv.classList.add('bg-green-100', 'text-green-800', 'border', 'border-green-200');
+                    // 2. Mostrar mensaje de éxito en la propia página sin redirigir (UX más directa)
+                    messagesDiv.textContent = '¡Gracias! Hemos recibido tu solicitud correctamente. Nos pondremos en contacto contigo lo antes posible.';
+                    messagesDiv.classList.remove('hidden', 'bg-red-100', 'text-red-700');
+                    messagesDiv.classList.add('bg-green-100', 'text-green-800', 'border', 'border-green-200');
 
-                // 3. Restaurar botón y limpiar formulario
-                form.reset();
-                submitBtn.disabled = false;
-                submitBtn.innerHTML = originalText;
+                    // 3. Restaurar botón y limpiar formulario
+                    form.reset();
+                    submitBtn.disabled = false;
+                    submitBtn.innerHTML = originalText;
 
-                // Ocultar mensaje después de 8 segundos
-                setTimeout(() => {
-                    messagesDiv.classList.add('hidden');
-                }, 8000);
+                    // Ocultar mensaje después de 8 segundos
+                    setTimeout(() => {
+                        messagesDiv.classList.add('hidden');
+                    }, 8000);
+                }, (error) => {
+                    console.log('FAILED...', error);
+                    messagesDiv.textContent = 'Hubo un error al enviar tu solicitud. Por favor, inténtalo de nuevo más tarde o contáctanos por teléfono.';
+                    messagesDiv.classList.remove('hidden', 'bg-green-100', 'text-green-800');
+                    messagesDiv.classList.add('bg-red-100', 'text-red-700', 'border', 'border-red-200');
 
-            }, 1000);
+                    submitBtn.disabled = false;
+                    submitBtn.innerHTML = originalText;
+
+                    setTimeout(() => {
+                        messagesDiv.classList.add('hidden');
+                    }, 8000);
+                });
         }
     </script>
 
